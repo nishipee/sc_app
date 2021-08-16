@@ -1,20 +1,37 @@
 <header class='top-page-header'>
-  <div class="left-contents">
-    <%= link_to image_tag("logo.png", class:"logo-icon"), "/" %>
-    <ul class='logo-lists'>
-      <li><%= link_to "コンセプト", "#", class: "concept" %></li>
-    </ul>
+  <div class="header-top">
+    <div class="left-contents">
+      <%= link_to image_tag("logo.png", class:"logo-icon"), "/" %>
+      <ul class='logo-lists'>
+        <li><%= link_to "コンセプト", "#", class: "concept" %></li>
+      </ul>
+    </div>
+    <div class="right-contents">
+      <ul class='lists-right'>
+        <%# deviseを導入できたら、ログインの有無で表示が変わるように分岐しましょう%>
+        <%# <li><%= link_to current_user.nickname, "#", class: "user-nickname" </li> %>
+        <%# <li><%= link_to 'ログアウト', "#", method: :delete, class: "logout" </li> %>
+        <li><%= link_to 'ログイン', "#", class: "login" %></li>
+        <li><%= link_to '新規登録', "#", class: "sign-up" %></li>
+        <%# //deviseを導入できたら、ログインの有無で表示が変わるように分岐しましょう%>
+        <li><%= link_to image_tag("cart.png", class: "cart-icon"), "#" %></li>
+        <li><%= link_to '寄付する', "#", class: "donate" %></li>
+      </ul>
+    </div>
   </div>
-  <div class="right-contents">
-    <ul class='lists-right'>
-      <%# deviseを導入できたら、ログインの有無で表示が変わるように分岐しましょう%>
-      <%# <li><%= link_to current_user.nickname, "#", class: "user-nickname" </li> %>
-      <%# <li><%= link_to 'ログアウト', "#", method: :delete, class: "logout" </li> %>
-      <li><%= link_to 'ログイン', "#", class: "login" %></li>
-      <li><%= link_to '新規登録', "#", class: "sign-up" %></li>
-      <%# //deviseを導入できたら、ログインの有無で表示が変わるように分岐しましょう%>
-      <li><%= link_to image_tag("cart.png", class: "cart-icon"), "#" %></li>
-      <li><%= link_to '寄付する', "#", class: "donate" %></li>
-    </ul>
+  <div class="header-bottom">
+    <ul class="category-lists">
+      <li><%= link_to "社会貢献カテゴリー", "#", class: "category-contents" %>
+      <li><%= link_to "品目ごと", "#", class: "category-contents" %>
+      <li><%= link_to "価格ごと", "#", class: "category-contents" %>
+      <li><%= link_to "店舗ごと", "#", class: "category-contents" %>
   </div>
 </header>
+<div class="form">
+  <form class="search-form" action="#">
+    <input class='input-box' placeholder='キーワードから探す'>
+    <button class="search-button">
+      <%= image_tag "search.png", class:"search-icon" %>
+    </button>
+  </form>
+</div>

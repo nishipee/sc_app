@@ -13,6 +13,12 @@
 }
 
 .footer-contents {
+  padding-bottom: 50px;
+  border-bottom: 1px solid black;
+}
+
+.footer-contents.last {
+  border-bottom: none;
 }
 
 .footer-content-head {
