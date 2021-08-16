@@ -1,0 +1,75 @@
+.top-page-header {
+  width: 100vw;
+  background-color: #f5f5f5;
+  display: flex;
+  height: 80px;
+}
+
+.left-contents {
+  width: 30vw;
+  display: flex;
+}
+
+
+.logo-lists {
+  list-style: none;
+  font-size: 20px;
+}
+
+.concept {
+  text-decoration: none;
+  color: black;
+  font-family: 'GT Walsheim Pro Light', sans-serif;
+}
+
+.logo-icon {
+  width: 200px;
+  height: 80px;
+}
+
+.right-contents {
+  width: 70vw;
+}
+
+.lists-right {
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+  font-size: 20px;
+}
+
+.login {
+  padding-right: 30px;
+  text-decoration: none;
+  color: black;
+}
+
+.sign-up {
+  padding-right: 30px;
+  text-decoration: none;
+  color: black;
+}
+
+.logout {
+  padding-right: 30px;
+  text-decoration: none;
+  color: black;
+}
+
+.user-nickname {
+  padding-right: 30px;
+  text-decoration: none;
+  color: black;
+}
+
+.cart-icon {
+  width: 55px;
+  height: 30px;
+  padding-right: 30px;
+}
+
+.donate {
+  padding-right: 30px;
+  text-decoration: none;
+  color: black;
+}
