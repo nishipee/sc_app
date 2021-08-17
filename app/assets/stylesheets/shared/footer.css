@@ -10,7 +10,6 @@
 .footer-left {
   width: 50vw;
   padding-left: 50px;
-  padding-top: 50px;
 }
 
 .footer-contents {
@@ -24,6 +23,7 @@
 
 .footer-content-head {
   color: floralwhite;
+  padding-top: 50px;
 }
 
 .footer-lists {
