@@ -1,0 +1,88 @@
+.main-view {
+  width: 100vw;
+}
+
+.title-contents {
+  background-image: url("http://localhost:3000/assets/eye_catching.jpg");
+  height: 300px;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+}
+
+.service-title {
+  padding: 50px;
+  font-size: 50px;
+  color: #fff;
+  text-shadow: 0 0 5px rgb(0 0 0 / 90%);
+}
+
+.item-contents {
+  padding: 50px;
+}
+
+.subtitle {
+  font-size: 30px;
+  font-family: 'GT Walsheim Pro Light', sans-serif;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+}
+
+.all-items {
+  display: flex;
+  justify-content: flex-end;
+  color: black;
+  font-size: 20px;
+}
+
+.item-lists {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 20px;
+  border-bottom: 1px solid black;
+  padding-left: unset;
+}
+
+.item-lists.last {
+  border-bottom: none;
+}
+
+.a {
+  text-decoration: none;
+}
+
+.item-img {
+  width: 300px;
+  height: 300px;
+}
+
+.item-name {
+  color: black;
+}
+
+.item-price {
+  color: black;
+  font-size: 18px;
+}
+
+.star {
+  display: flex;
+}
+
+.star-btn {
+  display: flex;
+  align-items: center;
+}
+
+.star-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.star-count {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+}

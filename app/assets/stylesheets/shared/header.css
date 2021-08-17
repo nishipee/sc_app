@@ -1,5 +1,6 @@
 .top-page-header {
   background-color: #f5f5f5;
+  width: 100vw;
 }
 
 .header-top {
@@ -97,6 +98,7 @@
 
 .form {
   background-color: #f5f5f5;
+  width: 100vw;
 }
 
 .search-form {
