@@ -385,3 +385,20 @@
 .inc {
   font-size: 13px;
 }
+
+.info-input-headline {
+  text-align: center;
+  padding-top: 50px;
+}
+
+.info-input-subline {
+  text-align: center;
+}
+
+.form-any {
+  background: #ccc;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  padding: 2px 4px;
+}
