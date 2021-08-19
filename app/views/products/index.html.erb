@@ -1,4 +1,4 @@
-<%= render "stock/purchase" %>
+<%= render "stock/admin-top" %>
 <%= render "shared/header" %>
 <div class="main-view">
   <%# 画面上部の「人生を変えるフリマアプリ」帯部分 %>
@@ -15,7 +15,7 @@
     <%= link_to "一覧を見る", "#", class: "all-items" %>
     <ul class='item-lists'>
 
-      <%# 商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
+      <%# 商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう eachメソッドにて %>
       <li class='list'>
         <%= link_to "#", class: "a" do %>
         <div class='item-img-content'>
