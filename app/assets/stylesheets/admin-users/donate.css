@@ -1,0 +1,82 @@
+/* border-bottom: 1px solid #eee; */
+
+
+.items-donate-contents {
+  background-color: #f5f5f5;
+  font-family: "Source Sans Pro", Helvetica, Arial, "æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“", "YuGothic", "ãƒ¡ã‚¤ãƒªã‚ª", "Meiryo", sans-serif;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-width: 500px;
+}
+
+.items-donate-main {
+  width: 80vw;
+  background-color: #FFF;
+  min-width: 450px;
+  padding: 10vh 5vw;
+  margin-bottom: 10vh;
+}
+
+.donate-group-lists {
+  list-style: none;
+  width: 1150px;
+  padding-left: 0px;
+}
+
+.donate-group-list {
+  margin-top: 20px;
+  border-bottom: 1px solid black;
+  padding-bottom: 20px;
+}
+
+.donate-content {
+  display: flex;
+}
+
+.donate-info {
+  margin: 0px 30px;
+  background-color: #efe8da;
+  padding: 15px 20px;
+  width: 100%;
+}
+
+.donate-explanation {
+  font-size: 18px;
+}
+
+.donate-img {
+  width: 200px;
+  height: 200px;
+}
+
+.points-text {
+  width: 30px;
+  height: 30px;
+  padding: 16px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  resize: none;
+  margin-right: 10px;
+}
+
+.how-points {
+  display: flex;
+  align-items: center;
+}
+
+.point-text {
+  font-size: 20px;
+  margin-right: 20px;
+}
+
+.donate-btn {
+  background: #ea352d;
+  border: 1px solid #ea352d;
+  color: #fff;
+  width: 100px;
+  height: 50px;
+  font-size: 14px;
+}
