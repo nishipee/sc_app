@@ -9,8 +9,8 @@ class CorporateUser < ApplicationRecord
 
   with_options presence: true do
     validates :name
-    validates :postcode, format: { with: /\A[0-9]{3}-[0-9]{4}\z/, message: "is invalid. Enter it as follows (e.g. 123-4567)" }
-    validates :prefecture_id, numericality: { other_than: 1, message: "can't be blank" }
+    validates :postcode, format: { with: /\A[0-9]{3}-[0-9]{4}\z/, message: "はハイフンを含む半角数字で入力してください" }
+    validates :prefecture_id, numericality: { other_than: 1, message: "を選択してください" }
     validates :city
     validates :house_number
     validates :building_name
@@ -18,5 +18,5 @@ class CorporateUser < ApplicationRecord
   end
 
   validates :email, uniqueness: { case_sensitive: false }
-  validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/, message: "is invalid. Include both letters and numbers" }
+  validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/, message: "は半角英数字で入力してください" }
 end

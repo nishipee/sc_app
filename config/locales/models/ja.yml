@@ -1,0 +1,16 @@
+ja:
+  activerecord:
+    models:
+      corporate_user: 出店店舗
+    attributes:
+      corporate_user:
+        name: 出店店舗名
+        postcode: 郵便番号
+        prefecture_id: 都道府県
+        city: 市区町村
+        house_number: 番地
+        building_name: 建物名
+        phone_num: 電話番号
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: 再確認用パスワード
