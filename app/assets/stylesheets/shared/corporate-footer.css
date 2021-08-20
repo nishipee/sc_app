@@ -1,0 +1,10 @@
+.corporate-footer {
+  background: linear-gradient(180deg, #c5c5c5 0%, #8aa1ae 100%);
+  width: 100vw;
+  min-width: 800px;
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+

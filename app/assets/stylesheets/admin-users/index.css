@@ -1,0 +1,32 @@
+.admin-main {
+  padding: 30px;
+}
+
+.title2 {
+  font-size: 20px;
+}
+
+.sales-price {
+  font-size: 18px;
+}
+
+.donation-price-price {
+  font-size: 18px;
+}
+
+.shop-link {
+  font-size: 18px;
+}
+
+.donate-link {
+  font-size: 18px;
+}
+
+.admin-sub {
+  padding-bottom: 20px;
+  border-bottom: 1px solid black;
+}
+
+.admin-sub.last {
+  border-bottom: none;
+}

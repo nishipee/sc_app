@@ -1,0 +1,118 @@
+<%= render "shared/header" %>
+<div class="main-view">
+  <%# 画面上部の「人生を変えるフリマアプリ」帯部分 %>
+  <div class='title-contents'>
+    <h2 class='service-title'>
+      いつもの買い物が社会貢献に
+    </h2>
+  </div>
+  <%# 商品一覧 %>
+  <div class='item-contents'>
+    <div class="subtitle" >
+      新着商品
+    </div>
+    <%= link_to "一覧を見る", "#", class: "all-items" %>
+    <ul class='item-lists'>
+
+      <%# 商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう eachメソッドにて %>
+      <li class='list'>
+        <%= link_to "#", class: "a" do %>
+        <div class='item-img-content'>
+          <%= image_tag "sample.jpg", class: "item-img" %>
+        </div>
+        <div class='item-info'>
+          <h3 class='item-name'>
+            <%= "商品名" %>
+          </h3>
+          <div class='item-price'>
+            <span><%= "販売価格" %>円<br><%= '配送料負担' %></span>
+            <div class="star">
+              <div class='star-btn'>
+                <%= image_tag "star.png", class:"star-icon" %>
+              </div>
+              <div class="star-count">
+                <span>0</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </li>
+      <%# //商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
+    </ul>
+  </div>
+  <%# /商品一覧 %>
+  <%# おすすめ商品一覧 %>
+  <div class='item-contents'>
+    <div class="subtitle" >
+      おすすめ
+    </div>
+    <%= link_to "一覧を見る", "#", class: "all-items" %>
+    <ul class='item-lists'>
+
+      <%# 商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
+      <li class='list'>
+        <%= link_to "#", class: "a" do %>
+        <div class='item-img-content'>
+          <%= image_tag "sample.jpg", class: "item-img" %>
+        </div>
+        <div class='item-info'>
+          <h3 class='item-name'>
+            <%= "商品名" %>
+          </h3>
+          <div class='item-price'>
+            <span><%= "販売価格" %>円<br><%= '配送料負担' %></span>
+            <div class="star">
+              <div class='star-btn'>
+                <%= image_tag "star.png", class:"star-icon" %>
+              </div>
+              <div class="star-count">
+                <span>0</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </li>
+      <%# //商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
+    </ul>
+  </div>
+  <%# /おすすめ商品一覧 %>
+  <%# 人気商品一覧 %>
+  <div class='item-contents'>
+    <div class="subtitle" >
+      人気ランキング
+    </div>
+    <%= link_to "一覧を見る", "#", class: "all-items" %>
+    <ul class='item-lists last'>
+
+      <%# 商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
+      <li class='list'>
+        <%= link_to "#", class: "a" do %>
+        <div class='item-img-content'>
+          <%= image_tag "sample.jpg", class: "item-img" %>
+        </div>
+        <div class='item-info'>
+          <h3 class='item-name'>
+            <%= "商品名" %>
+          </h3>
+          <div class='item-price'>
+            <span><%= "販売価格" %>円<br><%= '配送料負担' %></span>
+            <div class="star">
+              <div class='star-btn'>
+                <%= image_tag "star.png", class:"star-icon" %>
+              </div>
+              <div class="star-count">
+                <span>0</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </li>
+      <%# //商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
+    </ul>
+  </div>
+  <%# /人気商品一覧 %>
+</div>
+<%= render "shared/footer" %>
