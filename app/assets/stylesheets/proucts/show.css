@@ -1,0 +1,28 @@
+.show-main {
+  height: 100vh;
+}
+
+.show-left {
+  width: 50vw;
+  height: 100%;
+}
+
+.show-right {
+  width: 50vw;
+  height: 100%;
+}
+
+.show-img-content {
+  box-sizing: border-box;
+  padding: 5vh 5vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.show-item-img {
+  width: 80%;
+  height: 80%;
+}
