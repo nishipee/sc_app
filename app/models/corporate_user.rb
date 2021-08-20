@@ -3,6 +3,9 @@ class CorporateUser < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to :prefecture
 
   with_options presence: true do
     validates :name
