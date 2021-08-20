@@ -14,7 +14,7 @@ class CorporateUser < ApplicationRecord
     validates :city
     validates :house_number
     validates :building_name
-    validates :phone_num, length: { maximum: 11 }, format: { with: /\A[0-9]+\z/, message: "is invalid. Input only number" }
+    validates :phone_num, length: { maximum: 11 }, format: { with: /\A[0-9]+\z/, message: "は半角数字で入力してください" }
   end
 
   validates :email, uniqueness: { case_sensitive: false }
