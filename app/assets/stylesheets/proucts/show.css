@@ -80,7 +80,7 @@
 .explain {
   font-size: 20px;
   padding-top: 50px;
-  word-break: break-all;
+  overflow-wrap: break-word;
 }
 
 .cart-btn.last {
