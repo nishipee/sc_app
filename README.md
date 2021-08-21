@@ -20,6 +20,7 @@
 
 - has_many :purchase_histories
 - has_many :donation_histories
+- has_many :cart_items
 - has_one :point
 
 
@@ -68,8 +69,23 @@
 
 ### Association
 
+- has_many :car_items
 - belongs_to :corporation_user
 - has_one :purchase_history
+
+
+## cart_items テーブル
+
+| Column   | Type       | Options           |
+| -------- | ---------- | ----------------- |
+| item_num | integer    |                   |
+| user     | references | foreign_key: true |
+| product  | references | foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :product
 
 
 ## purchase_histories テーブル
