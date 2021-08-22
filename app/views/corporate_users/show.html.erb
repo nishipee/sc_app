@@ -9,7 +9,7 @@
       <%# 商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう eachメソッドにて %>
       <% @product.each do |product| %>
         <li class='list'>
-          <%= link_to "#", class: "a" do %>
+          <%= link_to edit_product_path(product.id), class: "a" do %>
           <div class='item-img-content'>
             <%= image_tag product.image, class: "item-img" %>
           </div>
