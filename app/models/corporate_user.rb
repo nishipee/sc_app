@@ -4,6 +4,8 @@ class CorporateUser < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   
+  has_many :products
+  
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :prefecture
 
