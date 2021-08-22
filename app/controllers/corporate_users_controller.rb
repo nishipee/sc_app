@@ -1,6 +1,6 @@
 class CorporateUsersController < ApplicationController
   before_action :authenticate_corporate_user!
-  before_action :move_to_session, only: :show
+  before_action :move_to_session
 
   def show
     @corporate_user = CorporateUser.find(params[:id])
@@ -10,7 +10,7 @@ class CorporateUsersController < ApplicationController
   private
   def move_to_session
     @corporate_user = CorporateUser.find(params[:id])
-    if current_corporate_user.id != @corporate_user.id
+    if current_corporate_user != @corporate_user
       redirect_to new_corporate_user_session_path
     end
   end

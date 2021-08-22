@@ -5,10 +5,11 @@
     </div>
     <div class="right-contents">
       <ul class='lists-right'>
-        <li><%= link_to current_corporate_user.name, "#", class: "user-nickname" %></li>
+        <li><%= link_to current_corporate_user.name, corporate_user_path(current_corporate_user.id), class: "user-nickname" %></li>
         <li><%= link_to 'ログアウト', destroy_corporate_user_session_path, method: :delete, class: "logout" %></li>
         <li><%= link_to "売り上げ確認", "#", class: "donate" %></li>
         <li><%= link_to '出品する', new_product_path, class: "donate" %></li>
+        <li><%= link_to '登録情報', "#", class: "donate" %></li>
         <li><%= link_to '出店情報編集', "#", class: "donate" %></li>
       </ul>
     </div>
