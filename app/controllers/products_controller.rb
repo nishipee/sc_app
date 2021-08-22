@@ -8,6 +8,11 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
+    if @product.save
+      redirect_to corporate_user_path(current_corporate_user.id)
+    else
+      render :new
+    end
   end
 
   
