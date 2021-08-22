@@ -2,12 +2,9 @@
 <div class="items-sell-contents">
   <div class="items-sell-main">
     <h2 class="items-sell-title">商品の情報を入力</h2>
-    <%# formにモデル指定する %>
-    <%= form_with local: true do |f| %>
+    <%= form_with model: @product, local: true do |f| %>
 
-    <%# インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
-    <%# render 'shared/error_messages', model: f.object %>
-    <%# //インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
+    <%= render 'shared/error_messages', model: f.object %>
 
     <%# 商品画像 %>
     <div class="img-upload">
@@ -19,7 +16,7 @@
         <p>
           クリックしてファイルをアップロード
         </p>
-        <%= f.file_field :hoge, id:"item-image" %>
+        <%= f.file_field :image, id:"item-image" %>
       </div>
     </div>
     <%# /商品画像 %>
@@ -29,13 +26,13 @@
         商品名
         <span class="indispensable">必須</span>
       </div>
-      <%= f.text_area :hoge, class:"items-text", id:"item-name", placeholder:"商品名（必須 40文字まで)", maxlength:"40" %>
+      <%= f.text_area :name, class:"items-text", id:"item-name", placeholder:"商品名（必須 40文字まで)", maxlength:"40" %>
       <div class="items-explain">
         <div class="weight-bold-text">
           商品の説明
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_area :hoge, class:"items-text", id:"item-info", placeholder:"商品の説明（必須 1,000文字まで）バングラデシュの革で作られた鞄です。現地で手作りしており、丈夫かつ長持ちします。" ,rows:"7" ,maxlength:"1000" %>
+        <%= f.text_area :introduction, class:"items-text", id:"item-info", placeholder:"商品の説明（必須 1,000文字まで）バングラデシュの革で作られた鞄です。現地で手作りしており、丈夫かつ長持ちします。" ,rows:"7" ,maxlength:"1000" %>
       </div>
     </div>
     <%# /商品名と商品説明 %>
@@ -48,17 +45,17 @@
           社会貢献カテゴリー
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:hoge, [], :hoge, :hoge, {}, {class:"select-box", id:"item-category"}) %>
+        <%= f.collection_select(:category1_id, Category1.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
         <div class="weight-bold-text">
           品目カテゴリー
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:hoge, [], :hoge, :hoge, {}, {class:"select-box", id:"item-category"}) %>
+        <%= f.collection_select(:category2_id, Category2.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
         <div class="weight-bold-text">
           商品詳細カテゴリー
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:hoge, [], :hoge, :hoge, {}, {class:"select-box", id:"item-category"}) %>
+        <%= f.collection_select(:category3_id, Category3.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
       </div>
     </div>
     <%# /商品の詳細 %>
@@ -74,17 +71,17 @@
           送料
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:hoge, [], :hoge, :hoge, {}, {class:"select-box", id:"item-shipping-fee-status"}) %>
+        <%= f.collection_select(:charge_id, Charge.all, :id, :name, {}, {class:"select-box", id:"item-shipping-fee-status"}) %>
         <div class="weight-bold-text">
           発送元の地域
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:hoge, [], :hoge, :hoge, {}, {class:"select-box", id:"item-prefecture"}) %>
+        <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"item-prefecture"}) %>
         <div class="weight-bold-text">
           発送までの日数
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:hoge, [], :hoge, :hoge, {}, {class:"select-box", id:"item-scheduled-delivery"}) %>
+        <%= f.collection_select(:scheduled_day_id, ScheduledDay.all, :id, :name, {}, {class:"select-box", id:"item-scheduled-delivery"}) %>
       </div>
     </div>
     <%# /配送について %>
@@ -102,28 +99,27 @@
             <span class="indispensable">必須</span>
           </div>
           <span class="sell-yen">¥</span>
-          <%= f.text_field :hoge, class:"price-input", id:"item-price", placeholder:"例）2000" %>
+          <%= f.text_field :price, class:"price-input", id:"item-price", placeholder:"例）2000" %>
         </div>
         <div class="price-content">
           <span>販売手数料 (20%)</span>
           <span>
-            <span id='add-tax-price'></span>円
+            <span id='add-tax'></span>円
           </span>
         </div>
         <div class="price-content">
           <span>販売利益</span>
           <span>
             <span id='profit'></span>円
-          </span>
         </div>
+        </span>
       </div>
     </div>
     <%# /販売価格 %>
     <%# 下部ボタン %>
     <div class="sell-btn-contents">
-      <%= f.submit "変更する" ,class:"sell-btn" %>
-      <%= link_to "削除", "#", method: :delete, class:"item-destroy" %>
-      <%= link_to 'もどる', "#", class:"back-btn" %>
+      <%= f.submit "出品する" ,class:"sell-btn" %>
+      <%=link_to 'もどる', corporate_user_path(current_corporate_user.id), class:"back-btn" %>
     </div>
     <%# /下部ボタン %>
     <% end %>
