@@ -60,7 +60,9 @@
 | ---------------- | ---------- | ----------------- |
 | name             | string     | null: false       |
 | introduction     | text       | null: false       |
-| category_id      | integer    | null: false       |
+| category1_id     | integer    | null: false       |
+| category2_id     | integer    | null: false       |
+| category3_id     | integer    | null: false       |
 | charge_id        | integer    | null: false       |
 | prefecture_id    | integer    | null: false       |
 | scheduled_day_id | integer    | null: false       |
