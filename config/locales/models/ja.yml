@@ -2,6 +2,7 @@ ja:
   activerecord:
     models:
       corporate_user: 出店店舗
+      product: 商品
     attributes:
       corporate_user:
         name: 出店店舗名
@@ -14,3 +15,15 @@ ja:
         email: メールアドレス
         password: パスワード
         password_confirmation: 再確認用パスワード
+      
+      product:
+        image: 商品画像
+        name: 商品名
+        introduction: 商品説明
+        category1_id: 社会貢献カテゴリー
+        category2_id: 品目カテゴリー
+        category3_id: 商品詳細カテゴリー
+        charge_id: 送料
+        prefecture_id: 発送元の地域
+        scheduled_day_id: 発送までの日数
+        price: 販売価格
