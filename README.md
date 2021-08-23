@@ -7,7 +7,6 @@
 | nickname           | string     | null: false                 |
 | email              | string     | null: false, unique: true   |
 | encrypted_password | string     | null: false                 |
-| from               | string     |                             |
 | birthday           | date       |                             |
 | postcode           | string     |                             |
 | prefecture_id      | integer    |                             |

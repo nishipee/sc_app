@@ -5,8 +5,6 @@
       出品済み商品
     </div>
     <ul class='item-lists last'>
-
-      <%# 商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう eachメソッドにて %>
       <% @product.each do |product| %>
         <li class='list'>
           <%= link_to edit_product_path(product.id), class: "a" do %>
@@ -32,7 +30,6 @@
           <% end %>
         </li>
       <% end %>
-      <%# //商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
     </ul>
   </div>
   <%# /出品済み商品一覧 %>
