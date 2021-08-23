@@ -28,7 +28,7 @@
           </div>
         </div>
         <div class="cart-btn">
-          <%= link_to "カートに入れる", "#" ,class:"item-red-btn"%>
+          <%= link_to "カートに入れる", product_add_item_path(product_id: @product.id), method: :post ,class:"item-red-btn"%>
         </div>
         <%# /商品の概要 %>
         <div class="item-explain-box">
@@ -66,7 +66,7 @@
           <%= @product.introduction %>
         </div>
         <div class="cart-btn last">
-          <%= link_to "カートに入れる", "#", class:"item-red-btn"%>
+          <%= link_to "カートに入れる", product_add_item_path(product_id: @product.id), class:"item-red-btn"%>
         </div>
       </div>
       <%# /商品の概要 %>

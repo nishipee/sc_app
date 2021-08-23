@@ -1,33 +1,39 @@
 <%= render "shared/header" %>
 <div class='transaction-contents'>
   <div class='transaction-main'>
+    <div class="flash">
+      <p class="flash-message"><%= flash[:notice] %></p>
+    </div>
     <h1 class='transaction-title-text'>
       カート内の商品
     </h1>
+    
     <%# 購入内容の表示 eachメソッドにて？ %>
     <%# <% if @cart_items.present? %> %>
-    <div class='buy-item-info'>
-      <%= image_tag "sample.jpg", class: 'buy-item-img' %>
-      <div class='buy-item-right-content'>
-        <h2 class='buy-item-text'>
-          <%= "商品名" %>
-        </h2>
-        <div class="quantity-contents">
-          <p class="quantity-name">数量</p>
-          <%= form_with method: :patch , local: true do |f| %>
-            <%= f.number_field :hoge, class: "quantity", size: 10, min: 1, id: "quantity_cart" %>
-            <%= f.submit "変更", class: "btn btn-info" %>
-          <% end %>
-          <%= form_with method: :delete , local: true do |f| %>
-            <%= f.submit "削除", class: "btn btn-info" %>
-          <% end %>
-        </div>
-        <div class='buy-item-price'>
-          <p class='item-price-text'>¥<%= '999,999,999' %>（税込）</p>
-          <p class='item-price-sub-text'><%= '送料' %></p>
+    <% @cart_items.each do |cart_item| %>
+      <div class='buy-item-info'>
+        <%= image_tag "sample.jpg", class: 'buy-item-img' %>
+        <div class='buy-item-right-content'>
+          <h2 class='buy-item-text'>
+            <%= cart_item.product.name %>
+          </h2>
+          <div class="quantity-contents">
+            <p class="quantity-name">数量</p>
+            <%= form_with method: :patch , local: true do |f| %>
+              <%= f.number_field :quantity, class: "quantity", size: 10, min: 1, id: "quantity_cart" %>
+              <%= f.submit "変更", class: "btn btn-info" %>
+            <% end %>
+            <%= form_with method: :delete , local: true do |f| %>
+              <%= f.submit "削除", class: "btn btn-info" %>
+            <% end %>
+          </div>
+          <div class='buy-item-price'>
+            <p class='item-price-text'>¥<%= '999,999,999' %>（税込）</p>
+            <p class='item-price-sub-text'><%= '送料' %></p>
+          </div>
         </div>
       </div>
-    </div>
+    <% end %>
     <%# /購入内容の表示 %>
 
     <%# 支払額の表示 %>

@@ -12,7 +12,10 @@ Rails.application.routes.draw do
   }
   root to: "products#index"
 
-  resources :products
+  resources :products do
+    post '/add_item', to: 'carts#add_item'
+  end
+  
   resources :corporate_users 
   resources :users
   resources :carts
@@ -20,5 +23,7 @@ Rails.application.routes.draw do
   get '/corporate_users_showinfo/:id', to: 'corporate_users#showinfo'
   get "/recent_products", to: "products#recent_products"
   get "/popular_products", to: "products#popular_products"
-
+  get '/my_cart', to: 'carts#my_cart'
+  post '/update_item', to: 'carts#update_item'
+  delete '/delete_item', to: 'carts#delete_item'
 end
