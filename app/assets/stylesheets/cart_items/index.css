@@ -1,0 +1,14 @@
+.quantity-contents {
+  display: flex;
+  align-items: center;
+}
+
+.quantity-name {
+  font-size: 18px;
+  padding-right: 20px;
+}
+
+.quantity {
+  width: 30px;
+  margin-right: 10px;
+}

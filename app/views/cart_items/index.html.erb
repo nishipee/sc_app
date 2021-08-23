@@ -5,14 +5,22 @@
       カート内の商品
     </h1>
     <%# 購入内容の表示 eachメソッドにて？ %>
+    <%# <% if @cart_items.present? %> %>
     <div class='buy-item-info'>
       <%= image_tag "sample.jpg", class: 'buy-item-img' %>
       <div class='buy-item-right-content'>
         <h2 class='buy-item-text'>
           <%= "商品名" %>
         </h2>
+        <div class="quantity-contents">
+          <p class="quantity-name">数量</p>
+          <%= form_with method: :patch , local: true do |f| %>
+            <%= f.number_field :hoge, class: "quantity", size: 10, min: 1, id: "quantity_cart" %>
+            <%= f.submit "変更", class: "btn btn-info" %>
+          <% end %>
+        </div>
         <div class='buy-item-price'>
-          <p class='item-price-text'>¥<%= '999,999,999' %></p>
+          <p class='item-price-text'>¥<%= '999,999,999' %>（税込）</p>
           <p class='item-price-sub-text'><%= '送料' %></p>
         </div>
       </div>
@@ -44,7 +52,14 @@
     <div class='buy-btn'>
       <%= f.submit "購入画面へ進む" ,class:"buy-red-btn", id:"button" %>
     </div>
+    <div class="sell-btn-contents">
+      <%= link_to "カートを空にする", "#", method: :delete, data: {confirm: '本当にカートを空にしてよろしいですか？'}, class:"item-destroy" %>
+      <%= link_to '買い物を続ける', products_path, class:"back-btn" %>
+    </div>
     <% end %>
+    <%# <% else %> %>
+    <%# <%= render "no_product" %> %>
+    <%# <% end %> %>
     <%# /購入画面へ進むようにモデル指定、URL指定 %>
   </div>
 </div>

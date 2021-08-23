@@ -67,6 +67,7 @@
 | scheduled_day_id | integer    | null: false       |
 | price            | integer    | null: false       |
 | corporation_user | references | foreign_key: true |
+| sold_num         | integer    | default: 0        |
 
 ### Association
 
@@ -80,6 +81,8 @@
 | Column       | Type       | Options           |
 | ------------ | ---------- | ----------------- |
 | products_num | integer    |                   |
+| total_price  | integer    |                   |
+| total_charge | integer    |                   |
 | user         | references | foreign_key: true |
 | product      | references | foreign_key: true |
 
@@ -91,10 +94,13 @@
 
 ## purchase_histories テーブル
 
-| Column  | Type       | Options           |
-| ------- | ---------- | ----------------- |
-| user    | references | foreign_key: true |
-| product | references | foreign_key: true |
+| Column       | Type       | Options           |
+| ------------ | ---------- | ----------------- |
+| products_num | integer    |                   |
+| total_price  | integer    |                   |
+| total_charge | integer    |                   |
+| user         | references | foreign_key: true |
+| product      | references | foreign_key: true |
 
 ### Association
 
