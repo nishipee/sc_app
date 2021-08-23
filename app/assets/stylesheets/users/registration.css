@@ -142,6 +142,10 @@
   margin: 0 auto;
 }
 
+.register-btn.corporate_user {
+  padding-top: 30px;
+}
+
 .register-red-btn {
   width: 100%;
   background: #ea352d;

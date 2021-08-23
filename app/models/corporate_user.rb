@@ -20,5 +20,5 @@ class CorporateUser < ApplicationRecord
   end
 
   validates :email, uniqueness: { case_sensitive: false }
-  validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/, message: "は半角英数字で入力してください" }
+  validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d][a-zA-Z0-9]+\z/, message: "は半角英数字で入力してください" }
 end

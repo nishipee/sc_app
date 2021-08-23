@@ -10,7 +10,7 @@
         <li><%= link_to "売り上げ確認", "#", class: "donate" %></li>
         <li><%= link_to '出品する', new_product_path, class: "donate" %></li>
         <li><%= link_to '店舗登録情報', " /corporate_users_showinfo/#{current_corporate_user.id}", class: "donate" %></li>
-        <li><%= link_to '店舗登録情報編集', "#", class: "donate" %></li>
+        <li><%= link_to '店舗登録情報編集', edit_corporate_user_path(current_corporate_user.id), class: "donate" %></li>
       </ul>
     </div>
   </div>
