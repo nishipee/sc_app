@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
-  before_action :authenticate_corporate_user!, except: [:index, :recent_products, :popular_products]
+  before_action :authenticate_corporate_user!, except: [:index, :show, :recent_products, :popular_products]
   before_action :set_product, except: [:index, :new, :create, :recent_products, :popular_products]
-  before_action :move_to_session, except: [:index, :new, :create, :recent_products, :popular_products]
+  before_action :move_to_session, except: [:index, :new, :create, :show, :recent_products, :popular_products]
 
   def index
     @product1 = Product.includes(:corporate_user).order("created_at DESC").first(3)

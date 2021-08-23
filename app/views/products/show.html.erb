@@ -1,0 +1,82 @@
+<%= render "shared/header" %>
+<div class="show-main">
+  <div class="show-left">
+    <div class='show-img-content'>
+      <%# 商品画像 %>
+      <%= image_tag @product.image, class: "show-item-img" %>
+      <%# /商品画像 %>
+    </div>
+  </div>
+  <div class="show-right">
+    <div class="item-show">
+      <div class="item-box">
+        <h2 class="name">
+          <%= @product.name %>
+        </h2>
+        <div class="item-price-box">
+          <span class="item-price-show">
+            ¥ <%= @product.price %>
+          </span>
+          <span class="item-postage">
+            <%= @product.charge.name %>
+          </span>
+        </div>
+        <div class="star show">
+          <div class="star-btn">
+            <%= image_tag "star.png" ,class:"star-icon"%>
+            <span>お気に入り 0</span>
+          </div>
+        </div>
+
+        <%# 商品が売れていない場合はこちらを表示しましょう %>
+        <div class="cart-btn">
+          <%= link_to "カートに入れる", "#" ,class:"item-red-btn"%>
+        </div>
+        <%# //商品が売れていない場合はこちらを表示しましょう %>
+
+
+        <%# //ログインしているユーザーと出品しているユーザーが、同一人物の場合と同一人物ではない場合で、処理を分けましょう %>
+
+        <div class="item-explain-box">
+          <span>商品説明</span>
+        </div>
+        <table class="detail-table">
+          <tbody>
+            <tr>
+              <th class="detail-item">出品者</th>
+              <td class="detail-value"><%= @product.corporate_user.name %></td>
+            </tr>
+            <tr>
+              <th class="detail-item">社会貢献カテゴリー</th>
+              <td class="detail-value"><%= @product.category1.name %></td>
+            </tr>
+            <tr>
+              <th class="detail-item">品目カテゴリー</th>
+              <td class="detail-value"><%= @product.category2.name %></td>
+            </tr>
+            <tr>
+              <th class="detail-item">商品詳細カテゴリー</th>
+              <td class="detail-value"><%= @product.category3.name %></td>
+            </tr>
+            <tr>
+              <th class="detail-item">発送元の地域</th>
+              <td class="detail-value"><%= @product.prefecture.name %></td>
+            </tr>
+            <tr>
+              <th class="detail-item">発送日の目安</th>
+              <td class="detail-value"><%= @product.scheduled_day.name %></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="explain">
+          <%= @product.introduction %>
+        </div>
+        <div class="cart-btn last">
+          <%= link_to "カートに入れる", "#" ,class:"item-red-btn"%>
+        </div>
+      </div>
+      <%# /商品の概要 %>
+    </div>
+  </div>
+</div>
+<%= render "shared/footer" %>

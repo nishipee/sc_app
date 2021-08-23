@@ -15,7 +15,7 @@
     <ul class='item-lists'>
       <% @product1.each do |p1| %>
         <li class='list'>
-          <%= link_to "#", class: "a" do %>
+          <%= link_to product_path(p1.id), class: "a" do %>
           <div class='item-img-content'>
             <%= image_tag p1.image, class: "item-img" %>
           </div>
@@ -83,7 +83,7 @@
     <ul class='item-lists last'>
       <% @product2.each do |p2| %>
         <li class='list'>
-          <%= link_to "#", class: "a" do %>
+          <%= link_to product_path(p2.id), class: "a" do %>
           <div class='item-img-content'>
             <%= image_tag p2.image, class: "item-img" %>
           </div>
