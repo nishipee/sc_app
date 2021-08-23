@@ -1,0 +1,36 @@
+<%= render "shared/header" %>
+<%# 新着商品一覧 %>
+<div class='item-contents'>
+  <div class="subtitle detail" >
+    新着商品一覧
+  </div>
+  <ul class='item-lists last'>
+    <% @product1.each do |product| %>
+      <li class='list'>
+        <%= link_to edit_product_path(product.id), class: "a" do %>
+        <div class='item-img-content'>
+          <%= image_tag product.image, class: "item-img" %>
+        </div>
+        <div class='item-info'>
+          <h3 class='item-name'>
+            <%= product.name %>
+          </h3>
+          <div class='item-price'>
+            <span><%= product.price %>円<br><%= product.charge.name %></span>
+            <div class="star">
+              <div class='star-btn'>
+                <%= image_tag "star.png", class:"star-icon" %>
+              </div>
+              <div class="star-count">
+                <span>0</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+<%# /新着商品一覧 %>
+<%= render "shared/footer" %>

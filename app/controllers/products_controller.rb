@@ -1,9 +1,11 @@
 class ProductsController < ApplicationController
-  before_action :authenticate_corporate_user!, except: [:index]
-  before_action :set_product, except: [:index, :new, :create]
-  before_action :move_to_session, except: [:index, :new, :create]
+  before_action :authenticate_corporate_user!, except: [:index, :recent_products, :popular_products]
+  before_action :set_product, except: [:index, :new, :create, :recent_products, :popular_products]
+  before_action :move_to_session, except: [:index, :new, :create, :recent_products, :popular_products]
 
   def index
+    @product1 = Product.includes(:corporate_user).order("created_at DESC").first(3)
+    @product2 = Product.includes(:corporate_user).order("sold_num ASC").first(3)
   end
 
   def new
@@ -38,6 +40,14 @@ class ProductsController < ApplicationController
     redirect_to corporate_user_path(current_corporate_user.id)
   end
 
+  def recent_products
+    @product1 = Product.includes(:corporate_user).order("created_at DESC")
+  end
+
+  def popular_products
+    @product2 = Product.includes(:corporate_user).order("sold_num ASC")
+  end
+
   
   private
   def product_params
@@ -53,6 +63,5 @@ class ProductsController < ApplicationController
       redirect_to new_corporate_user_session_path
     end
   end
-
 
 end

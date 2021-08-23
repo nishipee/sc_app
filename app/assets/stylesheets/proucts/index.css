@@ -29,6 +29,10 @@
   justify-content: center;
 }
 
+.subtitle.detail {
+  padding-bottom: 20px;
+}
+
 .all-items {
   display: flex;
   justify-content: flex-end;
