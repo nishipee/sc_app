@@ -18,6 +18,9 @@
             <%= f.number_field :hoge, class: "quantity", size: 10, min: 1, id: "quantity_cart" %>
             <%= f.submit "変更", class: "btn btn-info" %>
           <% end %>
+          <%= form_with method: :delete , local: true do |f| %>
+            <%= f.submit "削除", class: "btn btn-info" %>
+          <% end %>
         </div>
         <div class='buy-item-price'>
           <p class='item-price-text'>¥<%= '999,999,999' %>（税込）</p>
