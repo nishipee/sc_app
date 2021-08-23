@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  devise_for :users, controllers: {
+    sessions: "users/sessions",
+    passwords: "users/passwords",
+    registrations: "users/registrations"
+  }
+
   devise_for :corporate_users, controllers: {
     sessions: 'corporate_users/sessions',
     passwords: 'corporate_users/passwords',
@@ -8,6 +14,7 @@ Rails.application.routes.draw do
 
   resources :products
   resources :corporate_users 
+  resources :users
 
   get '/corporate_users_showinfo/:id', to: 'corporate_users#showinfo'
 
