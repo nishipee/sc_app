@@ -1,0 +1,25 @@
+.showinfo-top {
+  font-size: 30px;
+  text-align: center;
+  padding-top: 30px;
+  font-weight: 400;
+}
+
+.corporate-index {
+  padding: 10vh;
+}
+
+.n-contents {
+  display: flex;
+}
+
+.n-title {
+  font-size: 18px;
+  font-weight: bold;
+  padding-right: 10px;
+  padding-bottom: 15px;
+}
+
+.n-value {
+  font-size: 18px;
+}
