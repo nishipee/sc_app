@@ -77,11 +77,11 @@
 
 ## cart_items テーブル
 
-| Column   | Type       | Options           |
-| -------- | ---------- | ----------------- |
-| item_num | integer    |                   |
-| user     | references | foreign_key: true |
-| product  | references | foreign_key: true |
+| Column       | Type       | Options           |
+| ------------ | ---------- | ----------------- |
+| products_num | integer    |                   |
+| user         | references | foreign_key: true |
+| product      | references | foreign_key: true |
 
 ### Association
 
