@@ -11,7 +11,7 @@
     <div class="subtitle" >
       新着商品
     </div>
-    <%= link_to "一覧を見る", "#", class: "all-items" %>
+    <%= link_to "一覧を見る", recent_products_path, class: "all-items" %>
     <ul class='item-lists'>
       <% @product1.each do |p1| %>
         <li class='list'>
@@ -79,7 +79,7 @@
     <div class="subtitle" >
       人気ランキング
     </div>
-    <%= link_to "一覧を見る", "#", class: "all-items" %>
+    <%= link_to "一覧を見る", popular_products_path, class: "all-items" %>
     <ul class='item-lists last'>
       <% @product2.each do |p2| %>
         <li class='list'>

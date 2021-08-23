@@ -17,5 +17,7 @@ Rails.application.routes.draw do
   resources :users
 
   get '/corporate_users_showinfo/:id', to: 'corporate_users#showinfo'
+  get "/recent_products", to: "products#recent_products"
+  get "/popular_products", to: "products#popular_products"
 
 end
