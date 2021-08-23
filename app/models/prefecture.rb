@@ -51,6 +51,7 @@ class Prefecture < ActiveHash::Base
   ]
 
   include ActiveHash::Associations
+  has_many :users
   has_many :corporate_users
   has_many :products
   
