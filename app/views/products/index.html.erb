@@ -13,32 +13,31 @@
     </div>
     <%= link_to "一覧を見る", "#", class: "all-items" %>
     <ul class='item-lists'>
-
-      <%# 商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう eachメソッドにて %>
-      <li class='list'>
-        <%= link_to "#", class: "a" do %>
-        <div class='item-img-content'>
-          <%= image_tag "sample.jpg", class: "item-img" %>
-        </div>
-        <div class='item-info'>
-          <h3 class='item-name'>
-            <%= "商品名" %>
-          </h3>
-          <div class='item-price'>
-            <span><%= "販売価格" %>円<br><%= '送料' %></span>
-            <div class="star">
-              <div class='star-btn'>
-                <%= image_tag "star.png", class:"star-icon" %>
-              </div>
-              <div class="star-count">
-                <span>0</span>
+      <% @product1.each do |p1| %>
+        <li class='list'>
+          <%= link_to "#", class: "a" do %>
+          <div class='item-img-content'>
+            <%= image_tag p1.image, class: "item-img" %>
+          </div>
+          <div class='item-info'>
+            <h3 class='item-name'>
+              <%= p1.name %>
+            </h3>
+            <div class='item-price'>
+              <span><%= p1.price %>円<br><%= p1.charge.name %></span>
+              <div class="star">
+                <div class='star-btn'>
+                  <%= image_tag "star.png", class:"star-icon" %>
+                </div>
+                <div class="star-count">
+                  <span>0</span>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <% end %>
-      </li>
-      <%# //商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
+          <% end %>
+        </li>
+      <% end %>
     </ul>
   </div>
   <%# /商品一覧 %>
@@ -49,8 +48,6 @@
     </div>
     <%= link_to "一覧を見る", "#", class: "all-items" %>
     <ul class='item-lists'>
-
-      <%# 商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
       <li class='list'>
         <%= link_to "#", class: "a" do %>
         <div class='item-img-content'>
@@ -74,7 +71,6 @@
         </div>
         <% end %>
       </li>
-      <%# //商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
     </ul>
   </div>
   <%# /おすすめ商品一覧 %>
@@ -85,32 +81,31 @@
     </div>
     <%= link_to "一覧を見る", "#", class: "all-items" %>
     <ul class='item-lists last'>
-
-      <%# 商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
-      <li class='list'>
-        <%= link_to "#", class: "a" do %>
-        <div class='item-img-content'>
-          <%= image_tag "sample.jpg", class: "item-img" %>
-        </div>
-        <div class='item-info'>
-          <h3 class='item-name'>
-            <%= "商品名" %>
-          </h3>
-          <div class='item-price'>
-            <span><%= "販売価格" %>円<br><%= '送料' %></span>
-            <div class="star">
-              <div class='star-btn'>
-                <%= image_tag "star.png", class:"star-icon" %>
-              </div>
-              <div class="star-count">
-                <span>0</span>
+      <% @product2.each do |p2| %>
+        <li class='list'>
+          <%= link_to "#", class: "a" do %>
+          <div class='item-img-content'>
+            <%= image_tag p2.image, class: "item-img" %>
+          </div>
+          <div class='item-info'>
+            <h3 class='item-name'>
+              <%= p2.name %>
+            </h3>
+            <div class='item-price'>
+              <span><%= p2.price %>円<br><%= p2.charge.name %></span>
+              <div class="star">
+                <div class='star-btn'>
+                  <%= image_tag "star.png", class:"star-icon" %>
+                </div>
+                <div class="star-count">
+                  <span>0</span>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <% end %>
-      </li>
-      <%# //商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
+          <% end %>
+        </li>
+      <% end %>
     </ul>
   </div>
   <%# /人気商品一覧 %>
