@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
+  before_action :authenticate_corporate_user!, except: [:index]
   before_action :set_product, except: [:index, :new, :create]
-  before_action :move_to_session, except: :index
+  before_action :move_to_session, except: [:index, :new, :create]
 
   def index
   end
@@ -48,7 +49,6 @@ class ProductsController < ApplicationController
   end
 
   def move_to_session
-    @product = Product.find(params[:id])
     if current_corporate_user != @product.corporate_user
       redirect_to new_corporate_user_session_path
     end

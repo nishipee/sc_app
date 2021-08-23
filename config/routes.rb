@@ -5,6 +5,10 @@ Rails.application.routes.draw do
     registrations: 'corporate_users/registrations'
   }
   root to: "products#index"
+
   resources :products
-  resources :corporate_users
+  resources :corporate_users 
+
+  get '/corporate_users_showinfo/:id', to: 'corporate_users#showinfo'
+
 end
