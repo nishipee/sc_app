@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   resources :products
   resources :corporate_users 
   resources :users
-  resources :cart_items
+  resources :carts
 
   get '/corporate_users_showinfo/:id', to: 'corporate_users#showinfo'
   get "/recent_products", to: "products#recent_products"
