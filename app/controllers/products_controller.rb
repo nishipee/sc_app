@@ -41,11 +41,11 @@ class ProductsController < ApplicationController
   end
 
   def recent_products
-    @product1 = Product.includes(:corporate_user).order("created_at DESC").first(3)
+    @product1 = Product.includes(:corporate_user).order("created_at DESC")
   end
 
   def popular_products
-    @product2 = Product.includes(:corporate_user).order("sold_num ASC").first(3)
+    @product2 = Product.includes(:corporate_user).order("sold_num ASC")
   end
 
   
