@@ -26,3 +26,40 @@
   text-align: center;
   font-size: 18px;
 }
+
+.buy-item-info.cart {
+  height: 200px;
+}
+
+.buy-item-right-content.cart {
+  padding-top: 30px;
+}
+
+.item-price-text.cart {
+  font-size: 18px;
+}
+
+.cart-btn.cart {
+  display: flex;
+  align-items: center;
+}
+
+.cart-quantity {
+  padding-right: 10px;
+}
+
+.quantity.show {
+  height: 50px;
+  width: 40px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.cart-form {
+  display: flex;
+  align-items: center;
+}
+
+.item-red-btn.cart {
+  margin-bottom: 0;
+}

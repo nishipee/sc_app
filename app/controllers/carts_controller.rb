@@ -16,7 +16,7 @@ class CartsController < ApplicationController
       flash[:notice] = 'カートに商品が追加されました。'
       redirect_to my_cart_path
     else
-      flash[:notice] = '商品の追加に失敗しました。'
+      flash[:alert] = '商品の追加に失敗しました。数量を選択してください'
       redirect_to product_url(params[:product_id])
     end
   end
