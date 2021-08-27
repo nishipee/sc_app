@@ -14,6 +14,8 @@ Rails.application.routes.draw do
 
   resources :products do
     post '/add_item', to: 'carts#add_item'
+    patch '/update_item', to: 'carts#update_item'
+    delete '/delete_item', to: 'carts#delete_item'
   end
   
   resources :corporate_users 
@@ -24,6 +26,4 @@ Rails.application.routes.draw do
   get "/recent_products", to: "products#recent_products"
   get "/popular_products", to: "products#popular_products"
   get '/my_cart', to: 'carts#my_cart'
-  post '/update_item', to: 'carts#update_item'
-  delete '/delete_item', to: 'carts#delete_item'
 end
