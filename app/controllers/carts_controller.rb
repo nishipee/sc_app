@@ -41,6 +41,11 @@ class CartsController < ApplicationController
     redirect_to my_cart_path
   end
 
+  def destroy
+    current_cart.destroy
+    redirect_to root_path
+  end
+
   private
 
   def setup_cart_item!
