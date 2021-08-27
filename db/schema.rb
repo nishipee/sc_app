@@ -79,12 +79,10 @@ ActiveRecord::Schema.define(version: 2021_08_23_163708) do
     t.integer "prefecture_id", null: false
     t.integer "scheduled_day_id", null: false
     t.integer "price", null: false
+    t.integer "sold_num", default: 0
     t.bigint "corporate_user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "sold_num", default: 0
-    t.bigint "cart_id", null: false
-    t.index ["cart_id"], name: "index_products_on_cart_id"
     t.index ["corporate_user_id"], name: "index_products_on_corporate_user_id"
   end
 
