@@ -5,7 +5,7 @@ class ProductsController < ApplicationController
 
   def index
     @product1 = Product.includes(:corporate_user).order("created_at DESC").first(3)
-    @product2 = Product.includes(:corporate_user).order("sold_num ASC").first(3)
+    @product2 = Product.includes(:corporate_user).order("sold_num DESC").first(3)
   end
 
   def new

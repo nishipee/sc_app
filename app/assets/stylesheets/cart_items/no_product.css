@@ -1,0 +1,21 @@
+.no-product {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 50px 0;
+}
+
+.no-product-btn {
+  display: flex;
+  justify-content: center;
+}
+
+.back-btn {
+  text-align: center;
+}
+
+.add-product {
+  text-align: center;
+  font-size: 18px;
+  padding-bottom: 30px;
+}

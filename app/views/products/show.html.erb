@@ -15,7 +15,7 @@
         </h2>
         <div class="item-price-box">
           <span class="item-price-show">
-            ¥ <%= @product.price %>
+            ¥ <%= @product.price %>(税込)
           </span>
           <span class="item-postage">
             <%= @product.charge.name %>
@@ -27,16 +27,19 @@
             <span>お気に入り 0</span>
           </div>
         </div>
-
-        <%# 商品が売れていない場合はこちらを表示しましょう %>
-        <div class="cart-btn">
-          <%= link_to "カートに入れる", "#" ,class:"item-red-btn"%>
+        <div class="cart-btn cart">
+          <%= form_with url: product_add_item_path(product_id: @product.id), method: :post, class: "cart-form", local: true do |f| %>
+            <% unless @product.cart_items.present? %>
+              <p class="cart-quantity">数量</p>
+              <%= f.number_field :quantity, class: "quantity show", size: 10, min: 1, id: "quantity_cart" %>
+              <%= f.submit "カートに入れる", class:"item-red-btn cart" %>
+            <% else %>
+              <%= f.submit "カートを確認する", class:"item-red-btn cart" %>
+            <% end %>
+          <% end %>
         </div>
-        <%# //商品が売れていない場合はこちらを表示しましょう %>
-
-
-        <%# //ログインしているユーザーと出品しているユーザーが、同一人物の場合と同一人物ではない場合で、処理を分けましょう %>
-
+        <%= flash[:alert] %>
+        <%# /商品の概要 %>
         <div class="item-explain-box">
           <span>商品説明</span>
         </div>
@@ -72,7 +75,7 @@
           <%= @product.introduction %>
         </div>
         <div class="cart-btn last">
-          <%= link_to "カートに入れる", "#" ,class:"item-red-btn"%>
+          <%= link_to "カートに入れる", product_add_item_path(product_id: @product.id), class:"item-red-btn"%>
         </div>
       </div>
       <%# /商品の概要 %>

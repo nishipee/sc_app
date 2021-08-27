@@ -67,34 +67,52 @@
 | scheduled_day_id | integer    | null: false       |
 | price            | integer    | null: false       |
 | corporation_user | references | foreign_key: true |
+| sold_num         | integer    | default: 0        |
 
 ### Association
 
-- has_many :car_items
+- has_many :cart_items
+- has_many :carts, through: :cart_items
 - belongs_to :corporation_user
 - has_one :purchase_history
 
 
-## cart_items テーブル
+## cart_itemsテーブル
 
 | Column   | Type       | Options           |
 | -------- | ---------- | ----------------- |
-| item_num | integer    |                   |
-| user     | references | foreign_key: true |
 | product  | references | foreign_key: true |
+| cart     | references | foreign_key: true |
+| quantity | integer    | default: 0        |
+
+### Association
+
+- belongs_to :product
+- belongs_to :cart
+
+
+## carts テーブル
+
+| Column       | Type       | Options           |
+| ------------ | ---------- | ----------------- |
+| user         | references | foreign_key: true |
 
 ### Association
 
 - belongs_to :user
-- belongs_to :product
+- has_many :cart_items
+- has_many :products, through: :cart_items
 
 
 ## purchase_histories テーブル
 
-| Column  | Type       | Options           |
-| ------- | ---------- | ----------------- |
-| user    | references | foreign_key: true |
-| product | references | foreign_key: true |
+| Column       | Type       | Options           |
+| ------------ | ---------- | ----------------- |
+| products_num | integer    |                   |
+| total_price  | integer    |                   |
+| total_charge | integer    |                   |
+| user         | references | foreign_key: true |
+| product      | references | foreign_key: true |
 
 ### Association
 
