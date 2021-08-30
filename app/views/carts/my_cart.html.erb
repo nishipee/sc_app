@@ -7,8 +7,6 @@
     <h1 class='transaction-title-text'>
       カート内の商品
     </h1>
-    
-    <%# 購入内容の表示 eachメソッドにて？ %>
     <% if @cart_items.present? %>
       <% @cart_items.each do |cart_item| %>
         <div class='buy-item-info cart'>
@@ -56,20 +54,14 @@
         </div>
       </div>
       <%# /支払額の表示 %>
-      <%# 購入画面へ進むようにモデル指定、URL指定 %>
-      <%= form_with id: 'charge-form', class: 'transaction-form-wrap',local: true do |f| %>
-      <div class='buy-btn'>
-        <%= f.submit "購入画面へ進む" ,class:"buy-red-btn", id:"button" %>
-      </div>
       <div class="sell-btn-contents">
+        <%= link_to "購入画面へ進む", purchase_histories_path, class: "item-buy-btn", id: "button" %>
         <%= link_to "カートを空にする", cart_path(current_cart.id), method: :delete, data: {confirm: '本当にカートを空にしてよろしいですか？'}, class:"item-destroy" %>
         <%= link_to '買い物を続ける', products_path, class:"back-btn" %>
       </div>
-      <% end %>
     <% else %>
       <%= render "no_product" %>
     <% end %>
-    <%# /購入画面へ進むようにモデル指定、URL指定 %>
   </div>
 </div>
 <%= render "shared/footer" %>

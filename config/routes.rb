@@ -16,11 +16,13 @@ Rails.application.routes.draw do
     post '/add_item', to: 'carts#add_item'
     patch '/update_item', to: 'carts#update_item'
     delete '/delete_item', to: 'carts#delete_item'
+    resources :purchase_histories, only: :create
   end
   
   resources :corporate_users 
   resources :users
   resources :carts
+  resources :purchase_histories, only: :index
 
   get '/corporate_users_showinfo/:id', to: 'corporate_users#showinfo'
   get "/recent_products", to: "products#recent_products"
