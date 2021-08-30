@@ -7,6 +7,7 @@
     <h1 class='transaction-title-text'>
       カート内の商品
     </h1>
+    <%# カート内の表示 %>
     <% if @cart_items.present? %>
       <% @cart_items.each do |cart_item| %>
         <div class='buy-item-info cart'>
@@ -32,7 +33,7 @@
           </div>
         </div>
       <% end %>
-      <%# /購入内容の表示 %>
+      <%# /カート内の表示 %>
 
       <%# 支払額の表示 %>
       <div class='item-payment'>
