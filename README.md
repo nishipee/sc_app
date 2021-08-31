@@ -19,7 +19,7 @@
 
 - has_many :purchase_histories
 - has_many :donation_histories
-- has_many :cart_items
+- has_one :cart
 - has_one :point
 
 
@@ -72,7 +72,6 @@
 ### Association
 
 - has_many :cart_items
-- has_many :carts, through: :cart_items
 - belongs_to :corporation_user
 - has_one :purchase_history
 
@@ -100,7 +99,7 @@
 ### Association
 
 - belongs_to :user
-- has_many :cart_items
+- has_many :cart_items, dependent: :destroy
 - has_many :products, through: :cart_items
 
 
@@ -108,9 +107,8 @@
 
 | Column       | Type       | Options           |
 | ------------ | ---------- | ----------------- |
-| products_num | integer    |                   |
-| total_price  | integer    |                   |
-| total_charge | integer    |                   |
+| total_price  | integer    | null: false       |
+| total_charge | integer    | null: false       |
 | user         | references | foreign_key: true |
 | product      | references | foreign_key: true |
 

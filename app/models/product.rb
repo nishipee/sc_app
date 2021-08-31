@@ -2,6 +2,7 @@ class Product < ApplicationRecord
   has_many :cart_items
   belongs_to :corporate_user
   has_one_attached :image
+  has_one :purchase_history
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :prefecture
