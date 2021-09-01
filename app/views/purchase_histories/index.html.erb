@@ -4,7 +4,7 @@
     <h1 class='transaction-title-text'>
       購入内容の確認
     </h1>
-    <%# 購入内容の表示 eachメソッドにてカート内の商品が全て表示されるように。 %>
+    <%# 購入内容の表示 %>
     <% @cart_items.each do |cart_item| %>
       <div class='buy-item-info cart'>
         <%= image_tag cart_item.product.image, class: 'buy-item-img' %>
@@ -25,7 +25,7 @@
     <% end %>
     <%# /購入内容の表示 %>
 
-    <%# 支払額の表示 合計金額が表示されるように %>
+    <%# 支払額の表示 %>
     <div class='item-payment'>
       <div class="item-payment">
         <h1 class='item-payment-title'>
