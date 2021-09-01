@@ -63,3 +63,13 @@
 .item-red-btn.cart {
   margin-bottom: 0;
 }
+
+.item-buy-btn {
+  background: #ea352d;
+  border: 1px solid #ea352d;
+  color: #fff;
+  text-decoration: none;
+  padding: 20px 40px;
+  margin-bottom: 4vh;
+  width: 200px;
+}

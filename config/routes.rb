@@ -21,9 +21,11 @@ Rails.application.routes.draw do
   resources :corporate_users 
   resources :users
   resources :carts
+  resources :purchase_histories, only: [:index, :create]
 
   get '/corporate_users_showinfo/:id', to: 'corporate_users#showinfo'
   get "/recent_products", to: "products#recent_products"
   get "/popular_products", to: "products#popular_products"
   get '/my_cart', to: 'carts#my_cart'
+  get "/order_completed", to: "purchase_histories#order_completed"
 end

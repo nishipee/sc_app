@@ -19,7 +19,7 @@
 
 - has_many :purchase_histories
 - has_many :donation_histories
-- has_many :cart_items
+- has_one :cart
 - has_one :point
 
 
@@ -72,9 +72,9 @@
 ### Association
 
 - has_many :cart_items
-- has_many :carts, through: :cart_items
 - belongs_to :corporation_user
-- has_one :purchase_history
+- has_many :product_purchase_histories
+- has_many :purchase_histories, through: :product_purchase_histories
 
 
 ## cart_itemsテーブル
@@ -100,24 +100,37 @@
 ### Association
 
 - belongs_to :user
-- has_many :cart_items
+- has_many :cart_items, dependent: :destroy
 - has_many :products, through: :cart_items
+
+
+## product_purchase_histories テーブル
+
+| Column           | Type       | Options           |
+| ---------------- | ---------- | ----------------- |
+| product          | references | foreign_key: true |
+| purchase_history | references | foreign_key: true |
+
+### Association
+
+- belongs_to :product
+- belongs_to :purchase_history
 
 
 ## purchase_histories テーブル
 
 | Column       | Type       | Options           |
 | ------------ | ---------- | ----------------- |
-| products_num | integer    |                   |
-| total_price  | integer    |                   |
-| total_charge | integer    |                   |
+| total_price  | integer    | null: false       |
+| total_charge | integer    | null: false       |
 | user         | references | foreign_key: true |
 | product      | references | foreign_key: true |
 
 ### Association
 
 - belongs_to :user
-- belongs_to :product
+- has_many :product_purchase_histories
+- has_many :products, through: :product_purchase_histories
 - has_one :address
 - has_one :point
 
