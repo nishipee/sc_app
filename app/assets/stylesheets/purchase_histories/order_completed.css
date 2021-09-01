@@ -1,0 +1,11 @@
+.order_completed {
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.completed_sentence {
+  font-size: 40px;
+}

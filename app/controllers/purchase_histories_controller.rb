@@ -13,10 +13,13 @@ class PurchaseHistoriesController < ApplicationController
     if @purchase_history_address.valid?
       pay_item
       @purchase_history_address.save
-      redirect_to root_path
+      redirect_to order_completed_path
     else
       redirect_to purchase_histories_path, flash: { alert: @purchase_history_address.errors.full_messages }
     end
+  end
+
+  def order_completed
   end
 
   private
