@@ -46,7 +46,16 @@
     </div>
     <%# /支払額の表示 %>
 
-    <%= form_with id: 'charge-form', class: 'transaction-form-wrap',local: true do |f| %>
+    <%= form_with model: @purchase_history_address, url: purchase_histories_path, method: :post, id: 'charge-form', class: 'transaction-form-wrap',local: true do |f| %>
+
+    <% if flash[:alert].present? %>
+    <ul class="alert">
+      <% flash[:alert].each do |e| %>
+        <li><%= e %></li>
+      <% end %>
+    </ul>
+    <% end %>
+    
     <%# カード情報の入力 %>
     <div class='credit-card-form'>
       <h1 class='info-input-haedline'>
