@@ -15,7 +15,7 @@ class PurchaseHistoryAddress
     validates :user_id
   end
 
-  def save
+  def all_save
     purchase_history = PurchaseHistory.create(total_price: total_price, total_charge: total_charge, user_id: user_id)
     Address.create(postcode: postcode, prefecture_id: prefecture_id, city: city, house_number: house_number, phone_num: phone_num, purchase_history_id: purchase_history.id)
 

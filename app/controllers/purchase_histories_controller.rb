@@ -9,10 +9,20 @@ class PurchaseHistoriesController < ApplicationController
   end
 
   def create
+    @cart_items = current_cart.cart_items.includes([:product])
     @purchase_history_address = PurchaseHistoryAddress.new(purchase_history_address_params)
     if @purchase_history_address.valid?
       pay_item
-      @purchase_history_address.save
+      @purchase_history_address.all_save
+
+      # 商品購入個数のカウント
+      @cart_items.each do |cart_item|
+        cart_item.product.sold_num += cart_item.quantity
+        cart_item.product.save
+      end
+
+      current_cart.destroy
+
       redirect_to order_completed_path
     else
       redirect_to purchase_histories_path, flash: { alert: @purchase_history_address.errors.full_messages }
