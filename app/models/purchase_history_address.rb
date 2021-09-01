@@ -10,8 +10,6 @@ class PurchaseHistoryAddress
     validates :city
     validates :house_number
     validates :phone_num, length: { maximum: 11 }, format: { with: /\A[0-9]+\z/, message: "は半角数字で入力してください" }
-    validates :total_price
-    validates :total_charge
     validates :user_id
   end
 
