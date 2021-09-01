@@ -2,7 +2,8 @@ class Product < ApplicationRecord
   has_many :cart_items
   belongs_to :corporate_user
   has_one_attached :image
-  has_one :purchase_history
+  has_many :product_purchase_histories
+  has_many :purchase_histories, through: :product_purchase_histories
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :prefecture

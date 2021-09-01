@@ -73,7 +73,8 @@
 
 - has_many :cart_items
 - belongs_to :corporation_user
-- has_one :purchase_history
+- has_many :product_purchase_histories
+- has_many :purchase_histories, through: :product_purchase_histories
 
 
 ## cart_itemsテーブル
@@ -103,6 +104,19 @@
 - has_many :products, through: :cart_items
 
 
+## product_purchase_histories テーブル
+
+| Column           | Type       | Options           |
+| ---------------- | ---------- | ----------------- |
+| product          | references | foreign_key: true |
+| purchase_history | references | foreign_key: true |
+
+### Association
+
+- belongs_to :product
+- belongs_to :purchase_history
+
+
 ## purchase_histories テーブル
 
 | Column       | Type       | Options           |
@@ -115,7 +129,8 @@
 ### Association
 
 - belongs_to :user
-- belongs_to :product
+- has_many :product_purchase_histories
+- has_many :products, through: :product_purchase_histories
 - has_one :address
 - has_one :point
 

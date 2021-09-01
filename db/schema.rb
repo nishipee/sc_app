@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_31_130301) do
+ActiveRecord::Schema.define(version: 2021_09_01_052110) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -82,6 +82,15 @@ ActiveRecord::Schema.define(version: 2021_08_31_130301) do
     t.index ["reset_password_token"], name: "index_corporate_users_on_reset_password_token", unique: true
   end
 
+  create_table "product_purchase_histories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "product_id"
+    t.bigint "purchase_history_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["product_id"], name: "index_product_purchase_histories_on_product_id"
+    t.index ["purchase_history_id"], name: "index_product_purchase_histories_on_purchase_history_id"
+  end
+
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.text "introduction", null: false
@@ -103,10 +112,8 @@ ActiveRecord::Schema.define(version: 2021_08_31_130301) do
     t.integer "total_price", null: false
     t.integer "total_charge", null: false
     t.bigint "user_id"
-    t.bigint "product_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["product_id"], name: "index_purchase_histories_on_product_id"
     t.index ["user_id"], name: "index_purchase_histories_on_user_id"
   end
 
@@ -135,7 +142,8 @@ ActiveRecord::Schema.define(version: 2021_08_31_130301) do
   add_foreign_key "cart_items", "carts"
   add_foreign_key "cart_items", "products"
   add_foreign_key "carts", "users"
+  add_foreign_key "product_purchase_histories", "products"
+  add_foreign_key "product_purchase_histories", "purchase_histories"
   add_foreign_key "products", "corporate_users"
-  add_foreign_key "purchase_histories", "products"
   add_foreign_key "purchase_histories", "users"
 end
