@@ -1,5 +1,5 @@
 class AdminsController < ApplicationController
-  before_action :authenticate_admins!
+  before_action :authenticate_admin!
 
   def index
     @products = Product.includes(:corporate_user)

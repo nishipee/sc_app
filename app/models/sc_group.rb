@@ -1,0 +1,4 @@
+class ScGroup < ApplicationRecord
+
+  
+end
