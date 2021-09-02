@@ -1,0 +1,39 @@
+<%= render "shared/admin-header" %>
+<div class="showinfo-top">
+  寄付先登録情報
+</div>
+<div class="corporate-index">
+  <div class="n-contents img">
+    <div class="n-title">
+      寄付先のイメージ画像
+    </div>
+    <div class="n-value">
+      <%= image_tag @sc_group.image, class: "item-img" %>
+    </div>
+  </div>
+  <div class="n-contents">
+    <div class="n-title">
+      寄付先名
+    </div>
+    <div class="n-value">
+      <%= @sc_group.name %>
+    </div>
+  </div>
+  <div class="n-contents">
+    <div class="n-title">
+      寄付先の説明
+    </div>
+    <div class="n-value">
+      <%= @sc_group.introduction %>
+    </div>
+  </div>
+  <div class="n-contents">
+    <div class="n-title">
+      寄付の詳細
+    </div>
+    <div class="n-value">
+      <%= @sc_group.how_donation %>
+    </div>
+  </div>
+</div>
+<%= render "shared/admin-footer" %>

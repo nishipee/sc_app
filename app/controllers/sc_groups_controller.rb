@@ -16,6 +16,6 @@ class ScGroupsController < ApplicationController
 
   private
   def sc_group_params
-    params.require(:sc_group).permit(:name, :introduction, :how_donation).merge(admin_id: current_admin.id)
+    params.require(:sc_group).permit(:image, :name, :introduction, :how_donation).merge(admin_id: current_admin.id)
   end
 end

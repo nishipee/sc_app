@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   resources :admins
   get "/show_c_user/:corporate_user_id", to: "admins#show_c_user"
+  get "/show_sc_group/:sc_group_id", to: "admins#show_sc_group"
 
 
   # ユーザー

@@ -18,7 +18,7 @@
   <div class="admin-sub">
     <h3 class="title2">出店者リスト</h2>
     <ul class="shop-lists">
-      <% @corporate_user.each do |c_user| %>
+      <% @corporate_users.each do |c_user| %>
         <li><%= link_to c_user.name, "/show_c_user/#{c_user.id}", class: "shop-link" %></li>
       <% end %>
     </ul>
@@ -28,11 +28,10 @@
   <%# 寄付先リスト %>
   <div class="admin-sub last">
     <h3 class="title2">寄付先リスト</h2>
-    <%# eachメソッドにて %>
     <ul class="donation-lists">
-      <li><%= link_to "〇〇団体", "#", class: "donate-link" %></li>
-      <li><%= link_to "〇〇団体", "#", class: "donate-link" %></li>
-      <li><%= link_to "〇〇団体", "#", class: "donate-link" %></li>
+      <% @sc_groups.each do |sc_group| %>
+        <li><%= link_to sc_group.name, "/show_sc_group/#{sc_group.id}", class: "donate-link" %></li>
+      <% end %>
     </ul>
   </div>
   <%# /寄付先リスト %>
