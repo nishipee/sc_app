@@ -3,7 +3,7 @@
   <%# 総売り上げ額 %>
   <div class="admin-sub">
     <h3 class="title2">売り上げ</h2>
-    <p class="sales-price">¥<%= "売上額" %></p>
+    <p class="sales-price">¥<%= @sales %></p>
   </div>
   <%# /総売り上げ額 %>
 
@@ -17,10 +17,10 @@
   <%# 出店者リスト %>
   <div class="admin-sub">
     <h3 class="title2">出店者リスト</h2>
-    <%# eachメソッドにて %>
     <ul class="shop-lists">
-      <li><%= link_to "〇〇社", "#", class: "shop-link" %></li>
-      <li><%= link_to "〇〇社", "#", class: "shop-link" %></li>
+      <% @corporate_user.each do |c_user| %>
+        <li><%= link_to c_user.name, "/show_c_user/#{c_user.id}", class: "shop-link" %></li>
+      <% end %>
     </ul>
  </div>
  <%# /出店者リスト %>

@@ -17,10 +17,7 @@ class PurchaseHistoriesController < ApplicationController
       @purchase_history_address.all_save
 
       # 商品購入個数のカウント
-      @cart_items.each do |cart_item|
-        cart_item.product.sold_num += cart_item.quantity
-        cart_item.product.save
-      end
+      count_sold
 
       current_cart.destroy
 
@@ -51,5 +48,12 @@ class PurchaseHistoriesController < ApplicationController
       card: purchase_history_address_params[:token],
       currency: "jpy"
     )
+  end
+
+  def count_sold
+    @cart_items.each do |cart_item|
+      cart_item.product.sold_num += cart_item.quantity
+      cart_item.product.save
+    end
   end
 end
