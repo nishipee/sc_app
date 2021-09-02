@@ -40,6 +40,12 @@ ja:
         email: メールアドレス
         password: パスワード
         password_confirmation: 再確認用パスワード
+      
+      sc_group:
+        image: 寄付先のイメージ画像
+        name: 寄付先名
+        introduction: 寄付先の説明
+        how_donation: 寄付の詳細
 
   activemodel:
     models:

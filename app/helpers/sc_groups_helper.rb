@@ -1,0 +1,2 @@
+module ScGroupsHelper
+end

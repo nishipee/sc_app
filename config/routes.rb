@@ -1,38 +1,56 @@
 Rails.application.routes.draw do
+
+  root to: "products#index"
+
+  # 管理者
   devise_for :admins, controllers: {
     sessions: "admins/sessions"
   }
 
+  resources :admins
+  get "/show_c_user/:corporate_user_id", to: "admins#show_c_user"
+  get "/show_sc_group/:sc_group_id", to: "admins#show_sc_group"
+
+
+  # ユーザー
   devise_for :users, controllers: {
     sessions: "users/sessions",
     passwords: "users/passwords",
     registrations: "users/registrations"
   }
 
+  resources :users
+
+
+  # 出店店舗
   devise_for :corporate_users, controllers: {
     sessions: "corporate_users/sessions",
     passwords: "corporate_users/passwords",
     registrations: "corporate_users/registrations"
   }
-  root to: "products#index"
 
+  resources :corporate_users 
+  get "/corporate_users_showinfo/:id", to: "corporate_users#showinfo"
+  
+
+  # 商品
   resources :products do
     post "/add_item", to: "carts#add_item"
     patch "/update_item", to: "carts#update_item"
     delete "/delete_item", to: "carts#delete_item"
   end
-  
-  resources :admins
-  resources :corporate_users 
-  resources :users
-  resources :carts
-  resources :purchase_histories, only: [:index, :create]
 
-  get "/corporate_users_showinfo/:id", to: "corporate_users#showinfo"
+  resources :carts
   get "/recent_products", to: "products#recent_products"
   get "/popular_products", to: "products#popular_products"
   get "/my_cart", to: "carts#my_cart"
+
+
+  # 購入履歴
+  resources :purchase_histories, only: [:index, :create]
   get "/order_completed", to: "purchase_histories#order_completed"
-  
-  get "/show_c_user/:corporate_user_id", to: "admins#show_c_user"
+
+
+  # 寄付先
+  resources :sc_groups
 end

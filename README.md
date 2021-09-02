@@ -52,7 +52,7 @@
 
 ### Association
 
-- has_many :donation_destinations
+- has_many :sc_groups
 
 
 ## products テーブル
@@ -146,23 +146,23 @@
 ### Association
 
 - belongs_to :user
-- has_one :donation_destination
+- has_one :sc_group
 - has_one :point
 
 
-## donation_destinations テーブル
+## sc_groups テーブル
 
-| Column             | Type       | Options           |
-| ------------------ | ---------- | ----------------- |
-| name               | string     | null: false       |
-| introduction       | text       | null :false       |
-| donation_per_point | text       | null :false       |
-| admin_user         | references | foreign_key: true |
-| donation_history   | references | foreign_key: true |
+| Column           | Type       | Options           |
+| ---------------- | ---------- | ----------------- |
+| name             | string     | null: false       |
+| introduction     | text       | null :false       |
+| how_donation     | text       | null :false       |
+| admin            | references | foreign_key: true |
+| donation_history | references | foreign_key: true |
 
 ### Association
 
-- belongs_to :admin_user
+- belongs_to :admin
 - belongs_to :donation_history
 
 
