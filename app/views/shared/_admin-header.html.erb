@@ -5,11 +5,10 @@
     </div>
     <div class="right-contents">
       <ul class='lists-right'>
-        <%# deviseを導入できたら、ログインの有無で表示が変わるように分岐しましょう%>
-        <%# <li><%= link_to current_user.nickname, "#", class: "user-nickname" </li> %>
-        <%# <li><%= link_to 'ログアウト', "#", method: :delete, class: "logout" </li> %>
-        <%# //deviseを導入できたら、ログインの有無で表示が変わるように分岐しましょう%>
+        <li><%= link_to current_admin.name, "#", class: "user-nickname" %></li>
+        <li><%= link_to 'ログアウト', destroy_admin_session_path, method: :delete, class: "logout" %></li>
         <li><%= link_to "寄付先登録", "#", class: "donate" %></li>
+        <li><%= link_to "寄付先編集", "#", class: "donate" %></li>
       </ul>
     </div>
   </div>

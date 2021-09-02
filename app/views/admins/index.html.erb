@@ -1,0 +1,40 @@
+<%= render "shared/admin-header" %>
+<div class="admin-main">
+  <%# 総売り上げ額 %>
+  <div class="admin-sub">
+    <h3 class="title2">売り上げ</h2>
+    <p class="sales-price">¥<%= "売上額" %></p>
+  </div>
+  <%# /総売り上げ額 %>
+
+  <%# 総寄付額を表示 %>
+  <div class="admin-sub">
+    <h3 class="title2">総寄付額</h2>
+    <p class="donation-price-price">¥<%= "総寄付額" %></p>
+  </div>
+  <%# /総寄付額を表示 %>
+
+  <%# 出店者リスト %>
+  <div class="admin-sub">
+    <h3 class="title2">出店者リスト</h2>
+    <%# eachメソッドにて %>
+    <ul class="shop-lists">
+      <li><%= link_to "〇〇社", "#", class: "shop-link" %></li>
+      <li><%= link_to "〇〇社", "#", class: "shop-link" %></li>
+    </ul>
+ </div>
+ <%# /出店者リスト %>
+
+  <%# 寄付先リスト %>
+  <div class="admin-sub last">
+    <h3 class="title2">寄付先リスト</h2>
+    <%# eachメソッドにて %>
+    <ul class="donation-lists">
+      <li><%= link_to "〇〇団体", "#", class: "donate-link" %></li>
+      <li><%= link_to "〇〇団体", "#", class: "donate-link" %></li>
+      <li><%= link_to "〇〇団体", "#", class: "donate-link" %></li>
+    </ul>
+  </div>
+  <%# /寄付先リスト %>
+</div>
+<%= render "shared/admin-footer" %>

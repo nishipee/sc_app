@@ -42,14 +42,16 @@
 - has_many :products
 
 
-## admin_users テーブル
+## admins テーブル
 
 | Column             | Type   | Options     |
 | ------------------ | ------ | ----------- |
+| name               | string | ----------- |
 | email              | string | null: false |
 | encrypted_password | string | null: false |
 
 ### Association
+
 - has_many :donation_destinations
 
 
