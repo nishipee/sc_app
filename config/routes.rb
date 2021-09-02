@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  devise_for :admins, controllers: {
+    sessions: 'admins/sessions'
+  }
+
   devise_for :users, controllers: {
     sessions: "users/sessions",
     passwords: "users/passwords",
@@ -18,6 +22,7 @@ Rails.application.routes.draw do
     delete '/delete_item', to: 'carts#delete_item'
   end
   
+  resources :admins
   resources :corporate_users 
   resources :users
   resources :carts
