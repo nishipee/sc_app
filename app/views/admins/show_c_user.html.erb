@@ -1,0 +1,50 @@
+<%= render "shared/admin-header" %>
+<div class="showinfo-top">
+  店舗登録情報
+</div>
+<div class="corporate-index">
+  <div class="n-contents">
+    <div class="n-title">
+      店舗名
+    </div>
+    <div class="n-value">
+      <%= @corporate_user.name %>
+    </div>
+  </div>
+  <div class="n-contents">
+    <div class="n-title">
+      郵便番号
+    </div>
+    <div class="n-value">
+      <%= @corporate_user.postcode %>
+    </div>
+  </div>
+  <div class="n-contents">
+    <div class="n-title">
+      住所
+    </div>
+    <div class="n-value">
+      <%= @corporate_user.prefecture.name %>
+      <%= @corporate_user.city %>
+      <%= @corporate_user.house_number %>
+      <%= @corporate_user.building_name %>
+    </div>
+  </div>
+  <div class="n-contents">
+    <div class="n-title">
+      電話番号
+    </div>
+    <div class="n-value">
+      <%= @corporate_user.phone_num %>
+    </div>
+  </div>
+  <div class="n-contents">
+    <div class="n-title">
+      メールアドレス
+    </div>
+    <div class="n-value">
+      <%= @corporate_user.email %>
+    </div>
+  </div>
+</div>
+<%= render "shared/admin-footer" %>
