@@ -32,7 +32,7 @@ class PurchaseHistoriesController < ApplicationController
 
   private
   def purchase_history_address_params
-    params.require(:purchase_history_address).permit(:postcode, :prefecture_id, :city, :house_number, :building_name, :phone_num, :total_price, :total_charge, :product_id).merge(user_id: current_user.id, token: params[:token])
+    params.require(:purchase_history_address).permit(:postcode, :prefecture_id, :city, :house_number, :building_name, :phone_num, :total_price, :total_charge, :product_id, :quantity).merge(user_id: current_user.id, token: params[:token])
   end
 
   def move_to_top

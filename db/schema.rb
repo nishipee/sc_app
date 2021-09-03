@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_02_162650) do
+ActiveRecord::Schema.define(version: 2021_09_03_081023) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -100,6 +100,7 @@ ActiveRecord::Schema.define(version: 2021_09_02_162650) do
     t.bigint "purchase_history_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "quantity", default: 0
     t.index ["product_id"], name: "index_product_purchase_histories_on_product_id"
     t.index ["purchase_history_id"], name: "index_product_purchase_histories_on_purchase_history_id"
   end

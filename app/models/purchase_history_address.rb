@@ -1,6 +1,6 @@
 class PurchaseHistoryAddress
   include ActiveModel::Model
-  attr_accessor :postcode, :prefecture_id, :city, :house_number, :building_name, :phone_num, :total_price, :total_charge, :user_id, :purchase_history_id, :token, :product_id
+  attr_accessor :postcode, :prefecture_id, :city, :house_number, :building_name, :phone_num, :total_price, :total_charge, :user_id, :purchase_history_id, :token, :product_id, :quantity
 
   validates :token, presence: { message: "が確認できません" }
 
@@ -21,7 +21,7 @@ class PurchaseHistoryAddress
     # product_idを個別に分割し、idごとにproduct_purchase_historyテーブルへ保存
     i = 0
     product_id.split("").each do 
-      ProductPurchaseHistory.create(product_id: product_id[i], purchase_history_id: purchase_history.id)
+      ProductPurchaseHistory.create(product_id: product_id[i], purchase_history_id: purchase_history.id, quantity: quantity.split("")[i])
       i += 1
     end
   end

@@ -63,8 +63,10 @@
 
     <%# 商品ごとのproduct_idをcreateアクションへ送るための記述 %>
     <% product_num = [] %>
+    <% item_quantity = [] %>
     <% @cart_items.each do |cart_item| %>
       <%= f.text_field :product_id, value: product_num << cart_item.product.id, type: "hidden" %>
+      <%= f.text_field :quantity, value: item_quantity << cart_item.quantity, type: "hidden" %>
     <% end %>
     <%# /商品ごとのproduct_idをcreateアクションへ送るための記述 %>
     
