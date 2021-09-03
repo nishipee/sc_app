@@ -36,4 +36,8 @@
     </div>
   </div>
 </div>
+<div class="sell-btn-contents admin">
+  <%= link_to "編集する", edit_sc_group_path(@sc_group.id), class: "item-buy-btn", id: "button" %>
+  <%= link_to 'トップに戻る', admins_path, class:"back-btn" %>
+</div>
 <%= render "shared/admin-footer" %>
