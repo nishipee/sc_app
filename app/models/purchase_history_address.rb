@@ -1,6 +1,6 @@
 class PurchaseHistoryAddress
   include ActiveModel::Model
-  attr_accessor :postcode, :prefecture_id, :city, :house_number, :building_name, :phone_num, :total_price, :total_charge, :user_id, :purchase_history_id, :token, :product_id, :quantity
+  attr_accessor :postcode, :prefecture_id, :city, :house_number, :building_name, :phone_num, :total_price, :total_charge, :user_id, :purchase_history_id, :token, :product_id, :quantity, :points
 
   validates :token, presence: { message: "が確認できません" }
 
@@ -14,9 +14,9 @@ class PurchaseHistoryAddress
   end
 
   def all_save
-    purchase_history = PurchaseHistory.create(total_price: total_price, total_charge: total_charge, user_id: user_id)
+    point = (total_price.to_i - total_charge.to_i) * 0.05
+    purchase_history = PurchaseHistory.create(total_price: total_price, total_charge: total_charge, user_id: user_id, points: point)
     Address.create(postcode: postcode, prefecture_id: prefecture_id, city: city, house_number: house_number, phone_num: phone_num, purchase_history_id: purchase_history.id)
-
 
     # product_idを個別に分割し、idごとにproduct_purchase_historyテーブルへ保存
     i = 0

@@ -11,13 +11,18 @@ class PurchaseHistoriesController < ApplicationController
 
   def create
     @cart_items = current_cart.cart_items.includes([:product])
+    @sub_total = @cart_items.inject(0) { |sum, item| sum + item.sum_of_sub_price }
+    @total = @cart_items.inject(0) { |sum, item| sum + item.sum_of_price } + @sub_total
     @purchase_history_address = PurchaseHistoryAddress.new(purchase_history_address_params)
+    @user = User.find(@purchase_history_address.user_id)
     if @purchase_history_address.valid?
       pay_item
       @purchase_history_address.all_save
-
+      
       # 商品購入個数のカウント
       count_sold
+
+      add_point
 
       current_cart.destroy
 
@@ -32,7 +37,7 @@ class PurchaseHistoriesController < ApplicationController
 
   private
   def purchase_history_address_params
-    params.require(:purchase_history_address).permit(:postcode, :prefecture_id, :city, :house_number, :building_name, :phone_num, :total_price, :total_charge, :product_id, :quantity).merge(user_id: current_user.id, token: params[:token])
+    params.require(:purchase_history_address).permit(:postcode, :prefecture_id, :city, :house_number, :building_name, :phone_num, :total_price, :total_charge, :product_id, :quantity, :points).merge(user_id: current_user.id, token: params[:token])
   end
 
   def move_to_top
@@ -55,5 +60,11 @@ class PurchaseHistoriesController < ApplicationController
       cart_item.product.sold_num += cart_item.quantity
       cart_item.product.save
     end
+  end
+
+  def add_point
+    point = (@total.to_i - @sub_total.to_i) * 0.05
+    po = (@user.points += point)
+    @user.update!(points: po.to_i)
   end
 end
