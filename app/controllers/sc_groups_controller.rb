@@ -1,5 +1,6 @@
 class ScGroupsController < ApplicationController
   before_action :authenticate_admin!
+  before_action :set_sc_group, only: [:edit, :update]
 
   def new
     @sc_group = ScGroup.new
@@ -14,8 +15,23 @@ class ScGroupsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @sc_group.update(sc_group_params)
+      redirect_to admins_path
+    else
+      render :edit
+    end
+  end
+
   private
   def sc_group_params
     params.require(:sc_group).permit(:image, :name, :introduction, :how_donation).merge(admin_id: current_admin.id)
+  end
+
+  def set_sc_group
+    @sc_group = ScGroup.find(params[:id])
   end
 end

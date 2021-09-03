@@ -26,7 +26,7 @@
         寄付先名
         <span class="indispensable">必須</span>
       </div>
-      <%= f.text_area :name, class:"items-text", id:"item-name", placeholder:"寄付先名" %>
+      <%= f.text_area :name, class:"items-text", id:"item-name", placeholder:"寄付先名（必須 40文字まで)", maxlength:"40" %>
       <div class="items-explain">
         <div class="weight-bold-text">
           寄付先の説明
@@ -49,8 +49,9 @@
 
     <%# 下部ボタン %>
     <div class="sell-btn-contents">
-      <%= f.submit "登録する" ,class:"sell-btn" %>
-      <%=link_to 'もどる', admins_path, class:"back-btn" %>
+      <%= f.submit "変更する" ,class:"sell-btn" %>
+      <%= link_to "削除", sc_group_path(@sc_group.id), method: :delete, data: {confirm: '本当に削除してよろしいですか？'}, class:"item-destroy" %>
+      <%=link_to 'もどる', "/show_sc_group/#{@sc_group.id}", class:"back-btn" %>
     </div>
     <%# /下部ボタン %>
     <% end %>
