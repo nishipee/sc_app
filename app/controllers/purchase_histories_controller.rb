@@ -1,18 +1,13 @@
 class PurchaseHistoriesController < ApplicationController
   before_action :authenticate_user!
-  before_action :move_to_top
+  before_action :move_to_top, except: :order_completed
+  before_action :set_cart, only: [:index, :create]
   
   def index
-    @cart_items = current_cart.cart_items.includes([:product])
-    @sub_total = @cart_items.inject(0) { |sum, item| sum + item.sum_of_sub_price }
-    @total = @cart_items.inject(0) { |sum, item| sum + item.sum_of_price } + @sub_total
     @purchase_history_address = PurchaseHistoryAddress.new
   end
 
   def create
-    @cart_items = current_cart.cart_items.includes([:product])
-    @sub_total = @cart_items.inject(0) { |sum, item| sum + item.sum_of_sub_price }
-    @total = @cart_items.inject(0) { |sum, item| sum + item.sum_of_price } + @sub_total
     @purchase_history_address = PurchaseHistoryAddress.new(purchase_history_address_params)
     @user = User.find(@purchase_history_address.user_id)
     if @purchase_history_address.valid?
@@ -22,6 +17,7 @@ class PurchaseHistoriesController < ApplicationController
       # 商品購入個数のカウント
       count_sold
 
+      # ポイント付与
       add_point
 
       current_cart.destroy
@@ -53,6 +49,12 @@ class PurchaseHistoriesController < ApplicationController
       card: purchase_history_address_params[:token],
       currency: "jpy"
     )
+  end
+
+  def set_cart
+    @cart_items = current_cart.cart_items.includes([:product])
+    @sub_total = @cart_items.inject(0) { |sum, item| sum + item.sum_of_sub_price }
+    @total = @cart_items.inject(0) { |sum, item| sum + item.sum_of_price } + @sub_total
   end
 
   def count_sold

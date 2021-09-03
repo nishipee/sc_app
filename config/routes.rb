@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     sessions: "admins/sessions"
   }
 
-  resources :admins
+  resources :admins, only: :index
   get "/show_c_user/:corporate_user_id", to: "admins#show_c_user"
   get "/show_sc_group/:sc_group_id", to: "admins#show_sc_group"
 
@@ -29,18 +29,18 @@ Rails.application.routes.draw do
     registrations: "corporate_users/registrations"
   }
 
-  resources :corporate_users 
+  resources :corporate_users, only: [:show, :edit, :update]
   get "/corporate_users_showinfo/:id", to: "corporate_users#showinfo"
   
 
-  # 商品
+  # 商品 カート
   resources :products do
     post "/add_item", to: "carts#add_item"
     patch "/update_item", to: "carts#update_item"
     delete "/delete_item", to: "carts#delete_item"
   end
 
-  resources :carts
+  resources :carts, only: :destroy
   get "/recent_products", to: "products#recent_products"
   get "/popular_products", to: "products#popular_products"
   get "/my_cart", to: "carts#my_cart"
@@ -52,5 +52,5 @@ Rails.application.routes.draw do
 
 
   # 寄付先
-  resources :sc_groups
+  resources :sc_groups, only: [:new, :create, :edit, :update]
 end
