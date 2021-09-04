@@ -1,0 +1,48 @@
+<%= render "shared/header" %>
+<div class="items-donate-contents">
+  <div class="items-donate-main">
+    <h2 class="items-sell-title">寄付先の選択</h2>
+    <%# formにモデル指定する %>
+    <%= form_with class: "donate-form", local: true do |f| %>
+
+    <%# インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
+    <%# render 'shared/error_messages', model: f.object %>
+    <%# //インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
+
+    <%# 商品画像 %>
+    <div class='item-donate-contents'>
+      <ul class='donate-group-lists'>
+
+        <%# 寄付先のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう eachメソッドにて %>
+        <li class='donate-group-list'>
+          <div class="donate-content">
+            <div class='item-img-content'>
+              <%# 寄付先の画像を挿入 %>
+              <%= image_tag "sample.jpg", class: "donate-img" %>
+            </div>
+            <div class='donate-info'>
+              <h3 class='item-name'>
+                <%= "寄付先名" %>
+              </h3>
+              <p class="donate-explanation">
+                <%= "寄付先の説明" %>
+              </p>
+            </div>
+            <div class="how-points">
+              <%= f.text_area :hoge, class:"points-text", id:"item-name", maxlength:"40" %>
+              <p class="point-text">
+                pt
+              </p>
+            <div>
+            <div class="donate-btn-contents">
+              <%= f.submit "寄付する" ,class:"donate-btn" %>
+            </div>
+          </div>
+        </li>
+        <%# //商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
+      </ul>
+    </div>
+    <% end %>
+  </div>
+</div>
+<%= render "shared/footer" %>

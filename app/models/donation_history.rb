@@ -1,0 +1,2 @@
+class DonationHistory < ApplicationRecord
+end

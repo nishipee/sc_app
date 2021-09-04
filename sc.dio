@@ -99,10 +99,10 @@
                     <mxGeometry y="86" width="200" height="84" as="geometry"/>
                 </mxCell>
                 <mxCell id="36" value="Donation Histories Table" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;rounded=1;" parent="1" vertex="1">
-                    <mxGeometry x="629" y="65" width="160" height="80" as="geometry"/>
+                    <mxGeometry x="629" y="50" width="160" height="110" as="geometry"/>
                 </mxCell>
-                <mxCell id="37" value="user&#10;&#10;points" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="36" vertex="1">
-                    <mxGeometry y="26" width="160" height="54" as="geometry"/>
+                <mxCell id="37" value="user&#10;&#10;points&#10;&#10;sc_group" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="36" vertex="1">
+                    <mxGeometry y="26" width="160" height="84" as="geometry"/>
                 </mxCell>
                 <mxCell id="40" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=ERmany;endFill=0;endSize=50;" parent="1" source="7" target="20" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
@@ -157,7 +157,7 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="69" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1.019;entryY=0.181;entryDx=0;entryDy=0;entryPerimeter=0;startArrow=ERmany;startFill=0;startSize=50;endArrow=none;endFill=0;" edge="1" parent="1" source="58" target="15">
+                <mxCell id="69" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1.019;entryY=0.181;entryDx=0;entryDy=0;entryPerimeter=0;startArrow=ERmany;startFill=0;startSize=50;endArrow=none;endFill=0;" parent="1" source="58" target="15" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
             </root>

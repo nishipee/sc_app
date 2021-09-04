@@ -14,13 +14,13 @@
 | house_number       | string     |                             |
 | building_name      | string     |                             |
 | phone_num          | string     |                             |
+| points             | integer    | default: 0                  |
 
 ### Association
 
 - has_many :purchase_histories
 - has_many :donation_histories
 - has_one :cart
-- has_one :point
 
 
 ## corporation_users テーブル
@@ -112,6 +112,7 @@
 | ---------------- | ---------- | ----------------- |
 | product          | references | foreign_key: true |
 | purchase_history | references | foreign_key: true |
+| quantity         | integer    | default: 0        |
 
 ### Association
 
@@ -127,6 +128,7 @@
 | total_charge | integer    | null: false       |
 | user         | references | foreign_key: true |
 | product      | references | foreign_key: true |
+| points       | integer    |                   |
 
 ### Association
 
@@ -134,7 +136,6 @@
 - has_many :product_purchase_histories
 - has_many :products, through: :product_purchase_histories
 - has_one :address
-- has_one :point
 
 
 ## donation_histories テーブル
@@ -146,8 +147,7 @@
 ### Association
 
 - belongs_to :user
-- has_one :sc_group
-- has_one :point
+- belongs_to :sc_group
 
 
 ## sc_groups テーブル
@@ -163,23 +163,7 @@
 ### Association
 
 - belongs_to :admin
-- belongs_to :donation_history
-
-
-## points テーブル
-
-| Column           | Type       | Options           |
-| ---------------- | ---------- | ----------------- |
-| point            | integer    |                   |
-| user             | references | foreign_key: true |
-| purchase_history | references | foreign_key: true |
-| donation_history | references | foreign_key: true |
-
-### Association
-
-- belongs_to :user
-- belongs_to :purchase_history
-- belongs_to :donation_history
+- has_one :donation_history
 
 
 ## addresses テーブル
