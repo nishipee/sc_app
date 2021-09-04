@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_one :cart, dependent: :destroy
   has_many :purchase_histories
+  has_many :donation_histories
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :prefecture

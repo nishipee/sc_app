@@ -46,6 +46,9 @@ ja:
         name: 寄付先名
         introduction: 寄付先の説明
         how_donation: 寄付の詳細
+      
+      donation_history:
+        points: ポイント
 
   activemodel:
     models:
