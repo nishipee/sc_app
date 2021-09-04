@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_03_084624) do
+ActiveRecord::Schema.define(version: 2021_09_04_065931) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -95,6 +95,16 @@ ActiveRecord::Schema.define(version: 2021_09_03_084624) do
     t.index ["reset_password_token"], name: "index_corporate_users_on_reset_password_token", unique: true
   end
 
+  create_table "donation_histories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "points"
+    t.bigint "user_id"
+    t.bigint "sc_group_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["sc_group_id"], name: "index_donation_histories_on_sc_group_id"
+    t.index ["user_id"], name: "index_donation_histories_on_user_id"
+  end
+
   create_table "product_purchase_histories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "product_id"
     t.bigint "purchase_history_id"
@@ -168,6 +178,8 @@ ActiveRecord::Schema.define(version: 2021_09_03_084624) do
   add_foreign_key "cart_items", "carts"
   add_foreign_key "cart_items", "products"
   add_foreign_key "carts", "users"
+  add_foreign_key "donation_histories", "sc_groups"
+  add_foreign_key "donation_histories", "users"
   add_foreign_key "product_purchase_histories", "products"
   add_foreign_key "product_purchase_histories", "purchase_histories"
   add_foreign_key "products", "corporate_users"

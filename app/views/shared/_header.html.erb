@@ -18,7 +18,7 @@
         <% end %>
         <%# //deviseを導入できたら、ログインの有無で表示が変わるように分岐しましょう%>
         <li><%= link_to image_tag("cart.png", class: "cart-icon"), my_cart_path %></li>
-        <li><%= link_to '寄付する', "#", class: "donate" %></li>
+        <li><%= link_to '寄付する', donation_histories_path, class: "donate" %></li>
       </ul>
     </div>
   </div>

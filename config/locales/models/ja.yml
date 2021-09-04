@@ -40,12 +40,16 @@ ja:
         email: メールアドレス
         password: パスワード
         password_confirmation: 再確認用パスワード
+        points: ポイント
       
       sc_group:
         image: 寄付先のイメージ画像
         name: 寄付先名
         introduction: 寄付先の説明
         how_donation: 寄付の詳細
+      
+      donation_history:
+        points: ポイント
 
   activemodel:
     models:

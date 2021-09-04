@@ -66,7 +66,7 @@ class PurchaseHistoriesController < ApplicationController
 
   def add_point
     point = (@total.to_i - @sub_total.to_i) * 0.05
-    po = (@user.points += point)
-    @user.update!(points: po.to_i)
+    new_point = (@user.points += point)
+    @user.update!(points: new_point.to_i)
   end
 end

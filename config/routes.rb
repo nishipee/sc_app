@@ -51,6 +51,11 @@ Rails.application.routes.draw do
   get "/order_completed", to: "purchase_histories#order_completed"
 
 
-  # 寄付先
-  resources :sc_groups, only: [:new, :create, :edit, :update]
+  # 寄付先 寄付履歴
+  resources :sc_groups, only: [:new, :create, :edit, :update] do
+    resources :donation_histories, only: :create
+  end
+
+  resources :donation_histories, only: :index
+  get "/donation_completed", to: "donation_histories#donation_completed"
 end

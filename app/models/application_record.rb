@@ -16,4 +16,5 @@ class ApplicationRecord < ActiveRecord::Base
       500 * quantity
     end
   end
+
 end
