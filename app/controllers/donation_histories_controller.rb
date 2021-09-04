@@ -4,6 +4,7 @@ class DonationHistoriesController < ApplicationController
   def index
     @sc_groups = ScGroup.includes(:admin).order("created_at DESC")
     @donation_history = DonationHistory.new
+    @user = User.find(current_user.id)
   end
 
   def create
