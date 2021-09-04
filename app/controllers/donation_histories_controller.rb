@@ -11,13 +11,7 @@ class DonationHistoriesController < ApplicationController
     @sc_group = ScGroup.find(params[:sc_group_id])
     @donation_history = DonationHistory.new(donation_history_params)
     @user = User.find(current_user.id)
-    if @donation_history.save
-      point_calculation
-
-      redirect_to donation_completed_path
-    else
-      redirect_to donation_histories_path, flash: { alert: @donation_history.errors.full_messages }
-    end
+    point_calculation
   end
 
   def donation_completed
@@ -31,7 +25,18 @@ class DonationHistoriesController < ApplicationController
   end
 
   def point_calculation
-    new_point = (@user.points -= @donation_history.points)
-    @user.update(points: new_point.to_i)
+    if @user.points >= params[:donation_history][:points].to_i
+      new_point = (@user.points -= params[:donation_history][:points].to_i)
+      @user.update(points: new_point.to_i)
+      if @donation_history.save
+        redirect_to donation_completed_path
+      else
+        redirect_to donation_histories_path, flash: { alert: @donation_history.errors.full_messages }
+      end
+    else
+      new_point = (@user.points -= params[:donation_history][:points].to_i)
+      @user.update(points: new_point.to_i)
+      redirect_to donation_histories_path, flash: { alert: @user.errors.full_messages }
+    end
   end
 end
