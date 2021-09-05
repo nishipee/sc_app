@@ -1,0 +1,50 @@
+.user-points.my-page {
+  font-size: 20px;
+  padding-bottom: 50px;
+}
+
+.pt {
+  font-weight: bold;
+}
+
+.subtitle.mypage {
+  padding-bottom: 30px;
+}
+
+.mp {
+  display: flex;
+  justify-content: center;
+}
+
+.md {
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid grey;
+}
+
+.m-d-item-lists {
+  display: flex;
+  flex-direction: column;
+}
+
+.m-d-list {
+  display: flex;
+}
+
+.m-d-item-img {
+  width: 100px;
+  height: 100px;
+}
+
+.m-d-item-info {
+  display: flex;
+  align-items: center;
+}
+
+.item-lists.order {
+  border-bottom: none;
+}
+
+.md.all {
+  border-bottom: none;
+}

@@ -21,7 +21,7 @@ class PurchaseHistoryAddress
     # product_idを個別に分割し、idごとにproduct_purchase_historyテーブルへ保存
     i = 0
     product_id.split("").each do 
-      ProductPurchaseHistory.create(product_id: product_id[i], purchase_history_id: purchase_history.id, quantity: quantity.split("")[i])
+      ProductPurchaseHistory.create(product_id: product_id[i], purchase_history_id: purchase_history.id, quantity: quantity.split("")[i], user_id: user_id)
       i += 1
     end
   end

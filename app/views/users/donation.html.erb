@@ -1,0 +1,23 @@
+<%= render "shared/header" %>
+<div class='item-contents'>
+  <div class="subtitle" >
+    寄付履歴
+  </div>
+  <%= link_to "一覧を見る", donation_path, class: "all-items" %>
+  <div class="md all">
+    <ul class='m-d-item-lists'>
+      <% @donation_history.each do |dh| %>
+        <li class='m-d-list'>
+          <div class='m-d-item-img-content'>
+            <%= image_tag dh.sc_group.image, class: "m-d-item-img" %>
+          </div>
+          <div class='m-d-item-info'>
+            <%= "#{dh.sc_group.name}に#{dh.points}ptの寄付をしました" %>
+            <br/><%= dh.created_at.to_s(:datetime_jp) %>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+<%= render "shared/footer" %>

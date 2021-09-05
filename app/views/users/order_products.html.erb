@@ -1,0 +1,31 @@
+<%= render "shared/header" %>
+<%# 購入履歴一覧 %>
+<div class='item-contents'>
+  <div class="subtitle detail" >
+    購入履歴一覧
+  </div>
+  <ul class='item-lists order'>
+    <% @product_purchase_history.each do |pph| %>
+      <li class='list'>
+        <%= link_to product_path(pph.product.id), class: "a" do %>
+        <div class='item-img-content'>
+          <%= image_tag pph.product.image, class: "item-img" %>
+        </div>
+        <div class='item-info'>
+          <h3 class='item-name'>
+            <%= pph.product.name %>
+          </h3>
+          <div class='item-price'>
+            <span><%= pph.product.price %>円<br><%= pph.product.charge.name %></span>
+            <div class="date">
+              <%= pph.created_at.to_s(:datetime_jp) %>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+<%# /購入履歴一覧 %>
+<%= render "shared/footer" %>

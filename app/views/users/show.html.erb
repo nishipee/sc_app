@@ -1,0 +1,141 @@
+<%= render "shared/header" %>
+<div class='item-contents'>
+  <div class="user-points my-page">
+    <%= "#{current_user.nickname}さんの保有ポイントは" %><span class="pt"><%= "#{current_user.points}pt" %></span><%= "です" %>
+  </div>
+  <div class="subtitle mypage" >
+    プロフィール
+  </div>
+  <%= link_to "プロフィール情報を変更する", recent_products_path, class: "all-items" %>
+  <div class="md">
+    <div>
+      <div class="n-contents mypage">
+        <div class="n-title">
+          店舗名
+        </div>
+        <div class="n-value">
+          <%= current_user.nickname %>
+        </div>
+      </div>
+      <div class="n-contents mypage">
+        <div class="n-title">
+          郵便番号
+        </div>
+        <div class="n-value">
+          <%= current_user.postcode %>
+        </div>
+      </div>
+      <div class="n-contents mypage">
+        <div class="n-title">
+          住所
+        </div>
+        <div class="n-value">
+          <%= current_user.prefecture.name %>
+          <%= current_user.city %>
+          <%= current_user.house_number %>
+          <%= current_user.building_name %>
+        </div>
+      </div>
+      <div class="n-contents mypage">
+        <div class="n-title">
+          電話番号
+        </div>
+        <div class="n-value">
+          <%= current_user.phone_num %>
+        </div>
+      </div>
+      <div class="n-contents mypage">
+        <div class="n-title">
+          メールアドレス
+        </div>
+        <div class="n-value">
+          <%= current_user.email %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class='item-contents'>
+  <div class="subtitle" >
+    お気に入り商品
+  </div>
+  <%= link_to "一覧を見る", "#", class: "all-items" %>
+  <ul class='item-lists'>
+    <% @product_purchase_history.each do |pph| %>
+      <li class='list'>
+        <%= link_to product_path(pph.product.id), class: "a" do %>
+        <div class='item-img-content'>
+          <%= image_tag pph.product.image, class: "item-img" %>
+        </div>
+        <div class='item-info'>
+          <h3 class='item-name'>
+            <%= pph.product.name %>
+          </h3>
+          <div class='item-price'>
+            <span><%= pph.product.price %>円<br><%= pph.product.charge.name %></span>
+            <div class="star">
+              <div class='star-btn'>
+                <%= image_tag "star.png", class:"star-icon" %>
+              </div>
+              <div class="star-count">
+                <span>0</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+<div class='item-contents'>
+  <div class="subtitle" >
+    購入履歴
+  </div>
+  <%= link_to "一覧を見る", "/order_products/#{current_user.id}", class: "all-items" %>
+  <ul class='item-lists'>
+    <% @product_purchase_history.each do |pph| %>
+      <li class='list'>
+        <%= link_to product_path(pph.product.id), class: "a" do %>
+        <div class='item-img-content'>
+          <%= image_tag pph.product.image, class: "item-img" %>
+        </div>
+        <div class='item-info'>
+          <h3 class='item-name'>
+            <%= pph.product.name %>
+          </h3>
+          <div class='item-price'>
+            <span><%= pph.product.price %>円<br><%= pph.product.charge.name %></span>
+            <div class="date">
+              <%= pph.created_at.to_s(:datetime_jp) %>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+<div class='item-contents'>
+  <div class="subtitle" >
+    寄付履歴
+  </div>
+  <%= link_to "一覧を見る", "/donation/#{current_user.id}", class: "all-items" %>
+  <div class="md">
+    <ul class='m-d-item-lists'>
+      <% @donation_history.each do |dh| %>
+        <li class='m-d-list'>
+          <div class='m-d-item-img-content'>
+            <%= image_tag dh.sc_group.image, class: "m-d-item-img" %>
+          </div>
+          <div class='m-d-item-info'>
+            <%= "#{dh.sc_group.name}に#{dh.points}ptの寄付をしました" %>
+            <br/><%= dh.created_at.to_s(:datetime_jp) %>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<%= render "shared/footer" %>
