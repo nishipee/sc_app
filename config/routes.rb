@@ -19,7 +19,7 @@ Rails.application.routes.draw do
     registrations: "users/registrations"
   }
 
-  resources :users, only: :show
+  resources :users, only: [:show, :edit, :update]
   get "/order_products/:id", to: "users#order_products"
   get "/donation/:id", to: "users#donation"
 
