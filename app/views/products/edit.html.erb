@@ -12,6 +12,9 @@
         商品画像
         <span class="indispensable">必須</span>
       </div>
+      <div id="img-preview">
+      </div>
+      <%= image_tag @product.image, class: 'p-image' if @product.image.present? %>
       <div class="click-upload">
         <p>
           クリックしてファイルをアップロード

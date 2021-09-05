@@ -29,6 +29,11 @@
   text-align: center;
 }
 
+.p-image {
+  width: 100px;
+  height: 100px;
+}
+
 /* 共通 */
 .indispensable {
   background: #ea352d;

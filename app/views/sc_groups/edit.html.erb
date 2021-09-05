@@ -12,6 +12,9 @@
         寄付先画像
         <span class="indispensable">必須</span>
       </div>
+      <div id="img-preview">
+      </div>
+      <%= image_tag @sc_group.image, class: 'p-image' if @sc_group.image.present? %>
       <div class="click-upload">
         <p>
           クリックしてファイルをアップロード
