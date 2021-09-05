@@ -5,6 +5,10 @@ class ApplicationRecord < ActiveRecord::Base
     price * sold_num * 0.2
   end
 
+  def sum_of_corporate_sales
+    price * sold_num * 0.8
+  end
+
   def sum_of_price
     product.price * quantity
   end

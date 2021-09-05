@@ -6,6 +6,7 @@ class CorporateUsersController < ApplicationController
 
   def show
     @product = Product.includes(:corporate_user).where(corporate_user_id: @corporate_user.id).order("created_at DESC")
+    @sales = @product.inject(0) { |sum, item| sum + item.sum_of_corporate_sales }
   end
 
   def showinfo

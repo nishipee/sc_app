@@ -1,7 +1,11 @@
 <%= render "shared/corporate-header" %>
   <%# 出品済み商品一覧 %>
   <div class='item-contents'>
-    <div class="subtitle" >
+    <div class="admin-sub">
+      <h3 class="title2">売り上げ</h2>
+      <p class="sales-price">¥<%= @sales %></p>
+    </div>
+    <div class="subtitle c_user" >
       出品済み商品
     </div>
     <ul class='item-lists last'>
