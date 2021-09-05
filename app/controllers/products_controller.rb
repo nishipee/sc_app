@@ -6,6 +6,7 @@ class ProductsController < ApplicationController
   def index
     @product1 = Product.includes(:corporate_user).order("created_at DESC").first(3)
     @product2 = Product.includes(:corporate_user).order("sold_num DESC").first(3)
+    @donation_history = DonationHistory.includes(:sc_group).order("created_at DESC")
   end
 
   def new

@@ -9,6 +9,27 @@
   <%# 商品一覧 %>
   <div class='item-contents'>
     <div class="subtitle" >
+      最近の寄付実績
+    </div>
+    <%= link_to "一覧を見る", "#", class: "all-items" %>
+    <div class="md">
+      <ul class='m-d-item-lists'>
+        <% @donation_history.each do |dh| %>
+          <li class='m-d-list'>
+            <div class='m-d-item-img-content'>
+              <%= image_tag dh.sc_group.image, class: "m-d-item-img" %>
+            </div>
+            <div class='m-d-item-info'>
+              <%= "#{dh.user.nickname}さんから#{dh.sc_group.name}へ#{dh.points}ptの寄付を頂きました！" %>
+              <br/><%= dh.created_at.to_s(:datetime_jp) %>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+  <div class='item-contents'>
+    <div class="subtitle" >
       新着商品
     </div>
     <%= link_to "一覧を見る", recent_products_path, class: "all-items" %>
