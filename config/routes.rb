@@ -19,7 +19,9 @@ Rails.application.routes.draw do
     registrations: "users/registrations"
   }
 
-  resources :users
+  resources :users, only: :show
+  get "/order_products/:id", to: "users#order_products"
+  get "/donation/:id", to: "users#donation"
 
 
   # 出店店舗

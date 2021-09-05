@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_04_065931) do
+ActiveRecord::Schema.define(version: 2021_09_05_142452) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -111,8 +111,10 @@ ActiveRecord::Schema.define(version: 2021_09_04_065931) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "quantity", default: 0
+    t.bigint "user_id", null: false
     t.index ["product_id"], name: "index_product_purchase_histories_on_product_id"
     t.index ["purchase_history_id"], name: "index_product_purchase_histories_on_purchase_history_id"
+    t.index ["user_id"], name: "index_product_purchase_histories_on_user_id"
   end
 
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -182,6 +184,7 @@ ActiveRecord::Schema.define(version: 2021_09_04_065931) do
   add_foreign_key "donation_histories", "users"
   add_foreign_key "product_purchase_histories", "products"
   add_foreign_key "product_purchase_histories", "purchase_histories"
+  add_foreign_key "product_purchase_histories", "users"
   add_foreign_key "products", "corporate_users"
   add_foreign_key "purchase_histories", "users"
   add_foreign_key "sc_groups", "admins"
