@@ -10,7 +10,12 @@
   <%# 総寄付額を表示 %>
   <div class="admin-sub">
     <h3 class="title2">総寄付額</h2>
-    <p class="donation-price-price">¥<%= "総寄付額" %></p>
+    <ul class="donation-lists">
+      <% @sc_groups.each_with_index do |sc_group, i| %>
+        <li><%= link_to sc_group.name, "/show_sc_group/#{sc_group.id}", class: "donate-link" %></li>
+        <p class="donation-price-price">¥<%= @donation[i] %></p>
+      <% end %>
+    </ul>
   </div>
   <%# /総寄付額を表示 %>
 
