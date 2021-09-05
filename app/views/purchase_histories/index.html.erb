@@ -44,6 +44,16 @@
         </p>
       </div>
     </div>
+    <div class='item-payment'>
+      <div class="item-payment">
+        <h1 class='item-payment-title'>
+          付与予定ポイント　
+        </h1>
+        <p class='item-payment-price'>
+          <%= ((@total - @sub_total) * 0.05).to_i %>pt
+        </p>
+      </div>
+    </div>
     <%# /支払額の表示 %>
 
     <%= form_with model: @purchase_history_address, url: purchase_histories_path, method: :post, id: 'charge-form', class: 'transaction-form-wrap', local: true do |f| %>
