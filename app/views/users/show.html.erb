@@ -6,12 +6,12 @@
   <div class="subtitle mypage" >
     プロフィール
   </div>
-  <%= link_to "プロフィール情報を変更する", recent_products_path, class: "all-items" %>
+  <%= link_to "プロフィール情報を変更する", edit_user_path(current_user.id), class: "all-items" %>
   <div class="md">
     <div>
       <div class="n-contents mypage">
         <div class="n-title">
-          店舗名
+          ニックネーム
         </div>
         <div class="n-value">
           <%= current_user.nickname %>
@@ -52,6 +52,14 @@
           <%= current_user.email %>
         </div>
       </div>
+      <div class="n-contents mypage">
+        <div class="n-title">
+          生年月日
+        </div>
+        <div class="n-value">
+          <%= current_user.birthday %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -73,13 +81,8 @@
           </h3>
           <div class='item-price'>
             <span><%= pph.product.price %>円<br><%= pph.product.charge.name %></span>
-            <div class="star">
-              <div class='star-btn'>
-                <%= image_tag "star.png", class:"star-icon" %>
-              </div>
-              <div class="star-count">
-                <span>0</span>
-              </div>
+            <div class="date">
+              <%= pph.created_at.to_s(:datetime_jp) %>
             </div>
           </div>
         </div>
