@@ -93,12 +93,12 @@
     [![Image from Gyazo](https://i.gyazo.com/88d8644d60d8307af2c11ce0ce445b19.gif)](https://gyazo.com/88d8644d60d8307af2c11ce0ce445b19)  
       - 新着商品の閲覧ができます。
       - 人気商品の閲覧ができます。   
-<br>
+    <br>  
     - 商品詳細ページ閲覧機能  
     [![Image from Gyazo](https://i.gyazo.com/4d685ef639043399919b2657b7a90ab7.gif)](https://gyazo.com/4d685ef639043399919b2657b7a90ab7)  
       - 商品の詳細を確認できます。
       - 商品の個数を選択してカートに入れることができます。  
-<br>
+    <br>
     - カート機能  
     [![Image from Gyazo](https://i.gyazo.com/57653cb6d9fcefe8fb8b3cc6e4502f43.gif)](https://gyazo.com/57653cb6d9fcefe8fb8b3cc6e4502f43)  
     [![Image from Gyazo](https://i.gyazo.com/a489eb488dc55f152435ce596e2853fe.gif)](https://gyazo.com/a489eb488dc55f152435ce596e2853fe)  
@@ -107,44 +107,44 @@
       - カート内の商品個数を変更することができます。  
       - カート内の商品を削除することができます。
       - カートを削除することができます。  
-<br>
+    <br>
     - 商品購入機能  
     [![Image from Gyazo](https://i.gyazo.com/a02e10360e55f6cc23d11f5b982c403b.gif)](https://gyazo.com/a02e10360e55f6cc23d11f5b982c403b)  
     [![Image from Gyazo](https://i.gyazo.com/69abeb08d57b7491a19fff443b60060b.png)](https://gyazo.com/69abeb08d57b7491a19fff443b60060b)  
       - 商品情報を入力すると商品を購入することができます。  
-<br>
+    <br>
     - ポイント寄付機能  
     [![Image from Gyazo](https://i.gyazo.com/8d11ba2b3403991fe78cc72a86fb3619.gif)](https://gyazo.com/8d11ba2b3403991fe78cc72a86fb3619)  
       - 適切なポイント数を入力するとポイントを寄付することができます。  
-<br>
+    <br>
     - マイページ表示機能  
     [![Image from Gyazo](https://i.gyazo.com/0f58b66693150581827659c01dffe9a8.gif)](https://gyazo.com/0f58b66693150581827659c01dffe9a8)  
       - ユーザーの保有ポイントが表示されます。 
       - 寄付履歴が表示されます。  
-<br>
+    <br>
     - プロフィール編集機能  
     [![Image from Gyazo](https://i.gyazo.com/96c82543e4529a48180571c26f3d7a0c.gif)](https://gyazo.com/96c82543e4529a48180571c26f3d7a0c)  
       - パスワードを入力せずともユーザー情報を更新することができます。  
-<br>
+    <br>
 
   - 出店店舗  
     - 店舗管理ページ表示機能  
     [![Image from Gyazo](https://i.gyazo.com/5e69decffb62d07190abeb1b5f83cc88.jpg)](https://gyazo.com/5e69decffb62d07190abeb1b5f83cc88)  
       - 現在の売り上げを確認できます。  
       - 出品済み商品を確認することができます。  
-<br>
+    <br>
     - 商品出品機能  
     [![Image from Gyazo](https://i.gyazo.com/2d754c10843c66f2969eee74b6408189.gif)](https://gyazo.com/2d754c10843c66f2969eee74b6408189)  
       - 商品情報を正しく入力すると商品を出品することができます。  
-<br>
+    <br>
     - 商品編集機能  
     [![Image from Gyazo](https://i.gyazo.com/52c9d623978f7aadf343e38331c6e995.gif)](https://gyazo.com/52c9d623978f7aadf343e38331c6e995)  
       - 商品情報を正しく入力すると商品を編集することができます。  
-<br>
+    <br>
     - 商品削除機能  
     [![Image from Gyazo](https://i.gyazo.com/8d9b44628013460d9dd9fc81679c3a48.gif)](https://gyazo.com/8d9b44628013460d9dd9fc81679c3a48)  
       - 商品編集ページから商品を削除することができます。  
-<br>
+    <br>
 
   - 管理者  
     - 管理者ページ表示機能  
@@ -153,15 +153,15 @@
       - 各寄付先への総寄付額が表示されます。
       - 出店店舗リストが表示されます。
       - 寄付先リストが表示されます。  
-<br>
+    <br>
     - 寄付先登録機能  
     [![Image from Gyazo](https://i.gyazo.com/87f087a592389f5e21803fa3ce5ad7d8.gif)](https://gyazo.com/87f087a592389f5e21803fa3ce5ad7d8)  
       - 正しい情報を入力すると寄付先を登録できます。  
-<br>
+    <br>
     - 寄付先編集機能  
     [![Image from Gyazo](https://i.gyazo.com/648cf53b6b80de1eb1ec8bb8a2142c1b.gif)](https://gyazo.com/648cf53b6b80de1eb1ec8bb8a2142c1b)  
       - 正しい情報を入力すると寄付先を変更できます。  
-<br>
+    <br>
     - 寄付先削除機能  
     [![Image from Gyazo](https://i.gyazo.com/a41d00f1335123c945cafdead8c9344c.gif)](https://gyazo.com/a41d00f1335123c945cafdead8c9344c)  
       - 寄付先を削除することができます。  
@@ -373,10 +373,10 @@
  - Ruby 2.6.5
  - Ruby on Rails 6.0.0  
  
-  % git clone https://github.com/nishipee/sc_app.git  
-  % cd sc_app  
-  % bundle install  
-  % yarn install  
-  % rails db:create  
-  % rails db:migrate  
-  % rails s
+  `% git clone https://github.com/nishipee/sc_app.git`  
+  `% cd sc_app`  
+  `% bundle install`  
+  `% yarn install`  
+  `% rails db:create`  
+  `% rails db:migrate`  
+  `% rails s`
