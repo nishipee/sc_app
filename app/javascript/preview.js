@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
     document.getElementById("item-image").addEventListener("change", function(e){
 
-      const imageContent = document.querySelector("img")
+      const imageContent = document.querySelector("img.p-image")
       if (imageContent){
         imageContent.remove();
       }
