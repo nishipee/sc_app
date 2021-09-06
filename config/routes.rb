@@ -54,7 +54,7 @@ Rails.application.routes.draw do
 
 
   # 寄付先 寄付履歴
-  resources :sc_groups, only: [:new, :create, :edit, :update] do
+  resources :sc_groups, only: [:new, :create, :edit, :update, :destroy] do
     resources :donation_histories, only: :create
   end
 

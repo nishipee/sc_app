@@ -1,6 +1,6 @@
 class ScGroupsController < ApplicationController
   before_action :authenticate_admin!
-  before_action :set_sc_group, only: [:edit, :update]
+  before_action :set_sc_group, only: [:edit, :update, :destroy]
 
   def new
     @sc_group = ScGroup.new
@@ -24,6 +24,11 @@ class ScGroupsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @sc_group.destroy
+    redirect_to admins_path
   end
 
   private
