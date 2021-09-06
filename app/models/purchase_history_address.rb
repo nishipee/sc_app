@@ -21,10 +21,10 @@ class PurchaseHistoryAddress
     # product_idを個別に分割し、idごとにproduct_purchase_historyテーブルへ保存
     
     sleep(1)
-    i = 0
+    sum = 0
     product_id.split("").each do 
-      ProductPurchaseHistory.create(product_id: product_id[i], purchase_history_id: purchase_history.id, quantity: quantity.split("")[i], user_id: user_id)
-      i += 1
+      ProductPurchaseHistory.create(product_id: product_id[sum], purchase_history_id: purchase_history.id, quantity: quantity.split("")[sum], user_id: user_id)
+      sum += 1
     end
   end
 end
